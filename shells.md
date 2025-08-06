@@ -2,7 +2,7 @@
 
 Este repositório traz um conjunto prático de comandos úteis para obtenção de shells remotas durante testes de penetração, exploração ou CTFs.
 
-https://reverse-shell.sh/
+Gerador de shell reversa bastante útil: [reverse-shell.sh](https://reverse-shell.sh/)
 
 ---
 
