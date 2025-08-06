@@ -48,7 +48,6 @@ Este repositório não pretende ser um manual completo, mas sim um **repositóri
 ## ✍️ Contribuições
 
 Embora este seja um repositório de uso pessoal, **sugestões são sempre bem-vindas**!  
-Sinta-se à vontade para abrir um _pull request_ ou _issue_ com dicas, correções ou ferramentas que você também usa para aprender.
 
 ---
 
