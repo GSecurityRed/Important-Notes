@@ -17,7 +17,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🛡️ [XSS](./xss.md/)  
 - 📎 [Public Exploits](./publicexploits.md/)
 - 🌐 [Ports](./ports.md/)
-- 🌐 [Curl](./curl.md.md/)
+- 🌐 [Curl](./curl.md/)
 
 ---
 
