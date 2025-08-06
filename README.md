@@ -51,5 +51,4 @@ Embora este seja um repositório de uso pessoal, **sugestões são sempre bem-vi
 
 ---
 
-🔗 [GitHub - @gustavo.nunes](https://github.com/gustavo.nunes)
 
