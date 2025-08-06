@@ -1,4 +1,4 @@
-# HTB - XSS
+# XSS
 
 Existem **três tipos principais** de vulnerabilidades XSS:
 
