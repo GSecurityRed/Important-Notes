@@ -8,7 +8,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 
 > Clique para acessar as anotações de cada ferramenta:
 
-- 🔍 [Nmap](./nmap/)  
+- 🔍 [Nmap](./nmap.md/)  
   *Mapeamento de rede, escaneamentos e detecção de serviços.*
 
 - 🐞 [Burp Suite](./burp/README.md)  
