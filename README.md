@@ -9,28 +9,15 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 > Clique para acessar as anotações de cada ferramenta:
 
 - 🔍 [Nmap](./nmap.md/)  
-  *Mapeamento de rede, escaneamentos e detecção de serviços.*
-
-- 🐞 [Burp Suite](./burp/README.md)  
-  *Interceptação de tráfego, automação de ataques e fuzzing.*
-
-- 🌐 [Curl](./curl/README.md)  
-  *Requisições HTTP, testes de endpoints e manipulação de headers.*
-
-- 🦾 [FFUF](./ffuf/README.md)  
-  *Fuzzing de diretórios, parâmetros e descoberta de conteúdo.*
-
-- 💉 [SQLMap](./sqlmap/README.md)  
-  *Exploração automatizada de SQL Injection.*
-
-- 📂 [HTTPie](./httpie/README.md)  
-  *Alternativa ao Curl com interface intuitiva para requisições.*
-
-- 🛡️ [Metasploit](./metasploit/README.md)  
-  *Framework de exploração e post-exploitation.*
-
-- 📎 [Anotações Diversas](./extra/README.md)  
-  *Dicas rápidas, payloads úteis, links importantes, etc.*
+- 🐞 [Burp Suite](./burp.md/)  
+- 🌐 [Shells](./shells.md/)  
+- 🦾 [Recon](./recon.md/)  
+- 💉 [File transfer](./filetransfer.md/)  
+- 📂 [Privilege Escalation](./privilegeescalation.md/README.md)  
+- 🛡️ [XSS](./xss.md/README.md)  
+- 📎 [Public Exploits](./extra/README.md)
+- 🌐 [Ports](./ports.md/)
+- 🌐 [Curl](./curl.md.md/)
 
 ---
 
