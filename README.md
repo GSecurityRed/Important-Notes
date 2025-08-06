@@ -13,9 +13,9 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🌐 [Shells](./shells.md/)  
 - 🦾 [Recon](./recon.md/)  
 - 💉 [File transfer](./filetransfer.md/)  
-- 📂 [Privilege Escalation](./privilegeescalation.md/README.md)  
-- 🛡️ [XSS](./xss.md/README.md)  
-- 📎 [Public Exploits](./extra/README.md)
+- 📂 [Privilege Escalation](./privilegeescalation.md/)  
+- 🛡️ [XSS](./xss.md/)  
+- 📎 [Public Exploits](./publicexploits.md/)
 - 🌐 [Ports](./ports.md/)
 - 🌐 [Curl](./curl.md.md/)
 
