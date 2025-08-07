@@ -18,6 +18,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 📎 [Public Exploits](./publicexploits.md/)
 - 🌐 [Ports](./ports.md/)
 - 🌐 [Curl](./curl.md/)
+- 🐞 [Bug Bounty](./bug-bounty.md)
 
 ---
 
