@@ -66,6 +66,13 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
   `nmap -sS -sV -O -T4 -p- 192.168.0.1`
 
 ---
+  
+## 🔍 Alcance da rede de varredura
+  - `nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5` → </br>
+    10.129.2.0/24	Alcance da rede alvo. </br>
+    -sn	Desativa a varredura de portas. </br>
+    -oA tnet	Armazena os resultados em todos os formatos, começando pelo nome 'tnet'. </br>
+
 
 > 🧾 **Nota:** Este repositório é um guia pessoal de estudos. Use o Nmap com responsabilidade e apenas em ambientes autorizados.
 
