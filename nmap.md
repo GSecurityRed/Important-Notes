@@ -74,6 +74,16 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
     -oA tnet	Armazena os resultados em todos os formatos, começando pelo nome 'tnet'. </br>
 
 
-> 🧾 **Nota:** Este repositório é um guia pessoal de estudos. Use o Nmap com responsabilidade e apenas em ambientes autorizados.
+---
+
+## Verificando as 10 principais portas TCP
+  - `sudo nmap 10.129.2.28 --top-ports=10 `
+
+
+
+
+
+
+---
 
 
