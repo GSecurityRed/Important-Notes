@@ -84,7 +84,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
   - `--reason`
 ## Dica relatório html
   - xsltproc target.xml -o target.html
-
+## Verifica todas as portas.
+  - -p-
 
 ---
 
