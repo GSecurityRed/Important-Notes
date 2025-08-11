@@ -80,8 +80,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
   - `sudo nmap 10.129.2.28 --top-ports=10 `
 ## Verificando as 100 principais portas
   - `sudo nmap 10.129.2.28 -F`
-
-
+## Exibe o motivo pelo qual uma porta está em um estado específico.
+  - `--reason`
 
 
 
