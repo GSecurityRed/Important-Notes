@@ -78,7 +78,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 
 ## Verificando as 10 principais portas TCP
   - `sudo nmap 10.129.2.28 --top-ports=10 `
-
+## Verificando as 100 principais portas
+  - `sudo nmap 10.129.2.28 -F`
 
 
 
