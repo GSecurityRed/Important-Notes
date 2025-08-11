@@ -60,7 +60,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 
 ---
 
-## ✅ Dica Final
+## ✅
 
 - Combine opções para um scan poderoso:  
   `nmap -sS -sV -O -T4 -p- 192.168.0.1`
@@ -82,7 +82,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
   - `sudo nmap 10.129.2.28 -F`
 ## Exibe o motivo pelo qual uma porta está em um estado específico.
   - `--reason`
-
+## Dica relatório html
+  - xsltproc target.xml -o target.html
 
 
 ---
