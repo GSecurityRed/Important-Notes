@@ -86,7 +86,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
   - xsltproc target.xml -o target.html
 ## Verifica todas as portas.
   - -p-
-
+## Mostra o progresso da varredura a cada 5 segundos.
+- --stats-every=5s	
 ---
 
 
