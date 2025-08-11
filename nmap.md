@@ -22,9 +22,9 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 
 ## 🧠 Scripts NSE
 
-- `nmap --script help` → Lista scripts disponíveis.
-- `nmap --script=default 192.168.0.1` → Executa os scripts padrão.
-- `nmap --script=vuln 192.168.0.1` → Executa scripts de verificação de vulnerabilidades.
+- `nmap ip --script category` → Mecanismo de script Nmap.
+- `nmap ip --s` → .
+- `nmap --script ip` → .
 
 ---
 
