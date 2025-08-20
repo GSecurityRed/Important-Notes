@@ -51,7 +51,7 @@ cat endpoint.txt \
 
 cat xss_fuzz.txt | freq | tee -a possible_xss.txt
 
-subfinder -all -d target.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/2025/CVE-2025-0133.yam
+subfinder -all -d target.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/2025/CVE-2025-0133.yaml
 nuclei -l listadehost.txt -tags xss -o nuclei-xss.txt
 nuclei -u target.com -t cves -p http://127.0.0.1:8080 -v
 nuclei -u target.com -severity high,critical
