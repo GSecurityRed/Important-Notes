@@ -18,9 +18,9 @@ Ideal para uso em CTFs, pentests ou estudos de segurança ofensiva.
 Comandos para descobrir subdomínios e coletar informações HTTP básicas:
 
 ```bash
-subfinder -d example.com -all | httpx -sc -lc -title -tech-detect -threads 100 -timeout 10
+subfinder -d example.com -all -recursive| httpx -sc -lc -title -tech-detect -threads 100 -timeout 10
 
-subfinder -d saltlabs.com -all -silent \
+subfinder -d saltlabs.com -all -recursive -silent \
   | waybackurls \
   | sort -u \
   | httpx -mc 200 -title -tech-detect -threads 100 -timeout 10
@@ -51,7 +51,10 @@ cat endpoint.txt \
 
 cat xss_fuzz.txt | freq | tee -a possible_xss.txt
 
-nuclei -l chimebank.txt -tags xss -o nuclei-xss.txt
+subfinder -all -d target.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/2025/CVE-2025-0133.yam
+nuclei -l listadehost.txt -tags xss -o nuclei-xss.txt
+nuclei -u target.com -t cves -p http://127.0.0.1:8080 -v
+nuclei -u target.com -severity high,critical
 ```
 ## 📂 Força Bruta e Descoberta de Diretórios
 Comandos para fuzzing de diretórios e caminhos em aplicações web:
