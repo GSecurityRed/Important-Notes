@@ -78,6 +78,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 ## 🔍 Decoys
   - `sudo nmap 10.129.2.28 -D RND:5` → Gera cinco endereços IP aleatórios que indicam o IP de origem de onde vem a conexão. </br>
   - `sudo nmap 10.129.2.28 --source-port 53` -> Executa as varreduras a partir da porta de origem especificada, podemos assim burlar alguns firewalls para se conectar em portas especificas.
+  - `nmap -sU -p 53 --script=dns-nsid <IP_do_destino>` -> Descobrir a versão do servidor dns do alvo.
  
 
 ---
