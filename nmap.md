@@ -34,6 +34,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - `nmap -D RND:10 192.168.0.1` → Usa IPs falsos para camuflar o scan (Decoy).
 - `D 192.168.32.101,192.168.32.102,192.168.32.103,192.168.32.23 192.168.32.1`
 - `nmap -S <spoofed-IP> 192.168.0.1` → Spoof de IP de origem.
+- `-n` -> Desativa a resolução de DNS.
 - `nmap -f 192.168.0.1` → Fragmenta pacotes (bypass de firewalls).
 - `--disable-arp-ping` desativa ping arp
 - `sudo nmap 10.129.2.28 --source-port 53` -> Executa as varreduras a partir da porta de origem especificada, ajuda a te camuflar como uma mera requisição (ou -g53).
