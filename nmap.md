@@ -17,6 +17,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - `nmap -sV 192.168.0.1` → Detecta versões dos serviços.
 - `nmap -O 192.168.0.1` → Tenta identificar o sistema operacional.
 - `nmap -A 192.168.0.1` → Ativa detecção de SO, versões, script scan e traceroute.
+- `--disable-arp-ping` desativa ping arp
 
 ---
 
