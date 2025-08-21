@@ -17,7 +17,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - `nmap -sV 192.168.0.1` → Detecta versões dos serviços.
 - `nmap -O 192.168.0.1` → Tenta identificar o sistema operacional.
 - `nmap -A 192.168.0.1` → Ativa detecção de SO, versões, script scan e traceroute.
-- `--disable-arp-ping` desativa ping arp
+  
 
 ---
 
@@ -32,8 +32,14 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 ## 🎯 Técnicas de Evasão
 
 - `nmap -D RND:10 192.168.0.1` → Usa IPs falsos para camuflar o scan (Decoy).
+- `D 192.168.32.101,192.168.32.102,192.168.32.103,192.168.32.23 192.168.32.1`
 - `nmap -S <spoofed-IP> 192.168.0.1` → Spoof de IP de origem.
 - `nmap -f 192.168.0.1` → Fragmenta pacotes (bypass de firewalls).
+- `--disable-arp-ping` desativa ping arp
+- `sudo nmap 10.129.2.28 --source-port 53` -> Executa as varreduras a partir da porta de origem especificada, ajuda a te camuflar como uma mera requisição (ou -g53).
+- `nmap -sU -p 53 --script=dns-nsid <IP_do_destino>` -> Descobrir a versão do servidor dns do alvo.
+- `--max-retries`
+- `--script-args http.useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"`
 
 ---
 
@@ -74,13 +80,6 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
     -sn	Desativa a varredura de portas. </br>
     -oA tnet	Armazena os resultados em todos os formatos, começando pelo nome 'tnet'. </br>
 
-
----
-## 🔍 Decoys
-  - `sudo nmap 10.129.2.28 -D RND:5` → Gera cinco endereços IP aleatórios que indicam o IP de origem de onde vem a conexão. </br>
-  - `sudo nmap 10.129.2.28 --source-port 53` -> Executa as varreduras a partir da porta de origem especificada, podemos assim burlar alguns firewalls para se conectar em portas especificas.
-  - `nmap -sU -p 53 --script=dns-nsid <IP_do_destino>` -> Descobrir a versão do servidor dns do alvo.
- 
 
 ---
 ## Verificando as 10 principais portas TCP
