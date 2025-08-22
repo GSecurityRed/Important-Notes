@@ -41,6 +41,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - `nmap -sU -p 53 --script=dns-nsid <IP_do_destino>` -> Descobrir a versão do servidor dns do alvo.
 - `--max-retries`
 - `--script-args http.useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"`
+- `nmap 10.129.38.5 -sS -Pn --source-port 53 -D RND:3 -sV -sU`
 
 ---
 
@@ -96,5 +97,8 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 ## Mostra o progresso da varredura a cada 5 segundos.
 - --stats-every=5s	
 ---
+## Se conecta a uma porta especifica usando o DNS para talvez saber a versão
+
+- `ncat -nv --source-port 53 ip 50000`
 
 
