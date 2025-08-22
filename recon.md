@@ -88,6 +88,7 @@ Muitas vezes, esse certificado inclui mais do que apenas um subdomínio, o que s
 
 <img width="1267" height="305" alt="image" src="https://github.com/user-attachments/assets/1fc15c87-00e5-4722-bd69-059c8bf57f91" />
 
+Outra fonte para encontrar mais subdomínios é a [crt.sh](https://crt.sh/). 
 
 ---
 
