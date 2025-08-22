@@ -82,11 +82,14 @@ curl -IL http://target.com
 nmap -sV -p- target.com
 nmap --script vuln target.com
 ```
-Também verifique manualmente:
-- Código-fonte da página (Ctrl + U)
-- Informações do certificado HTTPS (cadeado)
-- robots.txt: http://target.com/robots.txt
-- Detecção de tecnologias com extensão ou CLI do Wappalyzer
+## SSL certificate do site principal
+
+Muitas vezes, esse certificado inclui mais do que apenas um subdomínio, o que significa que o certificado é usado para vários domínios, e estes provavelmente ainda estão ativos.
+
+<img width="1267" height="305" alt="image" src="https://github.com/user-attachments/assets/1fc15c87-00e5-4722-bd69-059c8bf57f91" />
+
+
+---
 
 ## 🧰 Extras e Ferramentas Úteis
 
