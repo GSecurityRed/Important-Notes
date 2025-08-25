@@ -81,6 +81,7 @@ nikto -h http://target.com
 curl -IL http://target.com
 nmap -sV -p- target.com
 nmap --script vuln target.com
+dig any inlanefreight.com
 ```
 ## SSL certificate do site principal
 
