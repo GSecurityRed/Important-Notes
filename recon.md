@@ -92,7 +92,16 @@ Muitas vezes, esse certificado inclui mais do que apenas um subdomínio, o que s
 Outra fonte para encontrar mais subdomínios é a [crt.sh](https://crt.sh/). 
 
 ---
+## 📂 FTP (File Transfer Protocol)
 
+O File Transfer Protocol (FTP) é um dos protocolos mais antigos da Internet. O FTP é executado dentro da camada de aplicação da pilha de protocolos TCP/IP.
+
+- `fpt ip`  Também pode funcionar como "anonymous FTP", onde qualquer um acessa sem senha (usado para disponibilizar arquivos públicos).
+- `ftp> get Important\ Notes.txt` Baixar algo
+- `ftp> put testupload.txt` Com o PUT comando, podemos fazer upload de arquivos na pasta atual para o servidor FTP.
+- `find / -type f -name ftp* 2>/dev/null | grep scripts` Todos os scripts NSE de FTP
+ 
+---
 ## 🧰 Extras e Ferramentas Úteis
 
 Ferramenta para buscar segredos e chaves de API expostas:
