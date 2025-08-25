@@ -17,6 +17,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - `nmap -sV 192.168.0.1` → Detecta versões dos serviços.
 - `nmap -O 192.168.0.1` → Tenta identificar o sistema operacional.
 - `nmap -A 192.168.0.1` → Ativa detecção de SO, versões, script scan e traceroute.
+- `nmap -sC 192.168.0.10` → Serve para executar automaticamente os scripts considerados “default” do NSE (Nmap Scripting Engine).
   
 
 ---
