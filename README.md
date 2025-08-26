@@ -19,7 +19,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🌐 [Ports](./ports.md/)
 - 🌐 [Curl](./curl.md/)
 - 🐞 [Bug Bounty](./bug-bounty.md)
-- 👣 [Shodan](./footprinting.md)
+- 👣 [Shodan](./shodan.md)
 
 ---
 
