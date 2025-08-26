@@ -108,11 +108,44 @@ SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretório
 - Existe uma implementação alternativa do servidor SMB chamada Samba, que é desenvolvida para sistemas operacionais baseados em Unix. Samba implementa o Sistema Comum de Arquivos da Internet (CIFS) protocolo de rede. CIFS é um dialeto do SMB, o que significa que é uma implementação específica do protocolo SMB originalmente criado pela Microsoft. Isso permite que o Samba se comunique efetivamente com sistemas Windows mais recentes. Por isso, é frequentemente chamado de SMB/CIFS. 
 - Quando os comandos SMB são transmitidos pelo Samba para um serviço NetBIOS mais antigo, as conexões normalmente ocorrem por portas TCP 137, 138, e 139. Em contraste, o CIFS opera pela porta TCP 445 exclusivamente.
 
-- `smbclient //IP/ -U "user"`
+- `smbclient //IP/ -U "user"` -> logar com um user especifico
+- `smbclient //IP/dir` -> Acessar um pasta em especifico
 - `cat /etc/samba/smb.conf | grep -v "#\|\;"` -> Ler arquivo de configuração SAMBA
 - `sudo systemctl restart smbd` -> Reiniciar SAMBA apos modificar arquivo de configuração
+- `smbclient -N -L //10.129.14.128` -> -L exibe uma lista dos compartilhamentos do servidor e o -N é chamado "null session", que é o acesso anonymous sem entrada de usuários existentes ou senhas.
+- `get arquivo.txt` -> Baixar um arquivo para sua maquina
+- `!ls / !cat / entre outros` -> Com o "!" pode-se usar comando do sistema local de sua maquina sem interromper a sessão.
+- `smbstatus` -> Exibe informações de conexão, versão, etc.
+- `sudo nmap 10.129.14.128 -sV -sC -p139,445` -> Pegando serviços com nmap
+- `rpcclient -U "" 10.129.14.128` -> O rpcclient é uma ferramenta de linha de comando usada para interagir com serviços RPC (Remote Procedure Call) do Windows, especialmente com o SMB/CIFS.
+- Tools para enumerar SMB como samrdump.py, SMBMap, CrackMapExec e enum4linux-ng (https://github.com/cddmp/enum4linux-ng)
+
+
 
 ---
+
+## Cliente RPC
+
+O rpcclient nos oferece muitas solicitações diferentes com as quais podemos executar funções específicas no servidor SMB para obter informações. Uma lista completa de todas essas funções pode ser encontrada no página de manual do cliente rpc.
+
+- `rpcclient -U "" IP`
+
+<img width="992" height="487" alt="image" src="https://github.com/user-attachments/assets/d3d2ee8b-f9df-4452-a397-1525770e3c82" />
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🧰 Extras e Ferramentas Úteis
 
 Ferramenta para buscar segredos e chaves de API expostas:
