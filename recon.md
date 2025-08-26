@@ -102,6 +102,13 @@ O File Transfer Protocol (FTP) é um dos protocolos mais antigos da Internet. O 
 - `find / -type f -name ftp* 2>/dev/null | grep scripts` Todos os scripts NSE de FTP
  
 ---
+## 📂 SMB (Server Message Block)
+
+SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretórios inteiros e outros recursos de rede, como impressoras, roteadores ou interfaces lançadas para a rede. A troca de informações entre diferentes processos do sistema também pode ser feita com base no protocolo SMB
+
+- `smbclient //IP/ -U "user"`
+
+---
 ## 🧰 Extras e Ferramentas Úteis
 
 Ferramenta para buscar segredos e chaves de API expostas:
