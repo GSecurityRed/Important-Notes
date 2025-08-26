@@ -104,9 +104,13 @@ O File Transfer Protocol (FTP) é um dos protocolos mais antigos da Internet. O 
 ---
 ## 📂 SMB (Server Message Block)
 
-SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretórios inteiros e outros recursos de rede, como impressoras, roteadores ou interfaces lançadas para a rede. A troca de informações entre diferentes processos do sistema também pode ser feita com base no protocolo SMB
+SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretórios inteiros e outros recursos de rede, como impressoras, roteadores ou interfaces lançadas para a rede. A troca de informações entre diferentes processos do sistema também pode ser feita com base no protocolo SMB. 
+- Existe uma implementação alternativa do servidor SMB chamada Samba, que é desenvolvida para sistemas operacionais baseados em Unix. Samba implementa o Sistema Comum de Arquivos da Internet (CIFS) protocolo de rede. CIFS é um dialeto do SMB, o que significa que é uma implementação específica do protocolo SMB originalmente criado pela Microsoft. Isso permite que o Samba se comunique efetivamente com sistemas Windows mais recentes. Por isso, é frequentemente chamado de SMB/CIFS. 
+- Quando os comandos SMB são transmitidos pelo Samba para um serviço NetBIOS mais antigo, as conexões normalmente ocorrem por portas TCP 137, 138, e 139. Em contraste, o CIFS opera pela porta TCP 445 exclusivamente.
 
 - `smbclient //IP/ -U "user"`
+- `cat /etc/samba/smb.conf | grep -v "#\|\;"` -> Ler arquivo de configuração SAMBA
+- `sudo systemctl restart smbd` -> Reiniciar SAMBA apos modificar arquivo de configuração
 
 ---
 ## 🧰 Extras e Ferramentas Úteis
