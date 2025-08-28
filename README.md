@@ -34,10 +34,6 @@ Este repositório não pretende ser um manual completo, mas sim um **repositóri
 
 ---
 
-## ✍️ Contribuições
 
-Embora este seja um repositório de uso pessoal, **sugestões são sempre bem-vindas**!  
-
----
 
 
