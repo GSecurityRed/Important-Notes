@@ -34,6 +34,7 @@ Este repositório não pretende ser um manual completo, mas sim um **repositóri
 
 ---
 
+© [GSecurity]
 
 
 
