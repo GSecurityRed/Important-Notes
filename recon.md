@@ -134,11 +134,13 @@ O rpcclient nos oferece muitas solicitações diferentes com as quais podemos ex
 
 ---
 
+## NFS (Network File System)
 
+Network File System (NFS) é um sistema de arquivos de rede desenvolvido pela Sun Microsystems e tem a mesma finalidade que o SMB. Seu objetivo é acessar sistemas de arquivos através de uma rede como se fossem locais. No entanto, ele usa um protocolo totalmente diferente.
 
+Ao rastrear o NFS, as portas TCP 111 e 2049 são essenciais
 
-
-
+- sudo nmap 10.129.14.128 -p111,2049 -sV -sC
 
 
 
