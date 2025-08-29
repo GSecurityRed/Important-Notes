@@ -162,7 +162,20 @@ Diferente DNS records são usados para consultas DNS, todas com tarefas diversas
 
 <img width="1032" height="712" alt="image" src="https://github.com/user-attachments/assets/69a1d90b-0518-4280-89b4-5fc30c2d15db" />
 
+- dig soa www.inlanefreight.com
+- dig AAAA www.inlanefreight.com
 
+### Todos os servidores DNS funcionam com três tipos diferentes de arquivos de configuração:
+
+- arquivos de configuração DNS local
+- arquivos de zona
+- arquivos de resolução de nome reverso
+
+O servidor DNS Bind9 é muito frequentemente usado em distribuições baseadas em Linux. Seu arquivo de configuração local (named.conf) é dividido aproximadamente em duas seções: primeiro, a seção de opções para configurações gerais e, segundo, as entradas de zona para os domínios individuais. Os arquivos de configuração local geralmente são:
+
+- named.conf.local
+- named.conf.options
+- named.conf.log
 
 ---
 
