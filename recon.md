@@ -134,7 +134,7 @@ O rpcclient nos oferece muitas solicitações diferentes com as quais podemos ex
 
 ---
 
-## NFS (Network File System)
+## 📂 NFS (Network File System)
 
 Network File System (NFS) é um sistema de arquivos de rede desenvolvido pela Sun Microsystems e tem a mesma finalidade que o SMB. Seu objetivo é acessar sistemas de arquivos através de uma rede como se fossem locais. No entanto, ele usa um protocolo totalmente diferente.
 
@@ -153,6 +153,17 @@ Ao rastrear o NFS, as portas TCP 111 e 2049 são essenciais
 ### Desmontando </br>
  - cd .. </br>
  - sudo umount ./target-NFS </br>
+---
+## 📂 DNS
+
+<img width="983" height="592" alt="image" src="https://github.com/user-attachments/assets/40804917-f354-4119-ae6f-d2f5fc8988ce" />
+
+Diferente DNS records são usados para consultas DNS, todas com tarefas diversas. Além disso, existem entradas separadas para diferentes funções, pois podemos configurar servidores de e-mail e outros servidores para um domínio.
+
+<img width="1032" height="712" alt="image" src="https://github.com/user-attachments/assets/69a1d90b-0518-4280-89b4-5fc30c2d15db" />
+
+
+
 ---
 
 ## 🧰 Extras e Ferramentas Úteis
