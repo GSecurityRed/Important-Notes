@@ -164,6 +164,10 @@ Diferente DNS records são usados para consultas DNS, todas com tarefas diversas
 
 - dig soa www.inlanefreight.com
 - dig AAAA www.inlanefreight.com
+- dig any inlanefreight.htb @10.129.14.128
+- dig CH TXT version.bind 10.129.120.85 -> Version Query
+- dig axfr inlanefreight.htb @10.129.14.128
+- dig axfr internal.inlanefreight.htb @10.129.14.128
 
 ### Todos os servidores DNS funcionam com três tipos diferentes de arquivos de configuração:
 
@@ -177,6 +181,9 @@ O servidor DNS Bind9 é muito frequentemente usado em distribuições baseadas e
 - named.conf.options
 - named.conf.log
 
+- cat /etc/bind/named.conf.local
+- cat /etc/bind/db.domain.com
+- cat /etc/bind/db.10.129.14
 ---
 
 ## 🧰 Extras e Ferramentas Úteis
