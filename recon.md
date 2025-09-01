@@ -168,6 +168,7 @@ Diferente DNS records são usados para consultas DNS, todas com tarefas diversas
 - dig CH TXT version.bind 10.129.120.85 -> Version Query
 - dig axfr inlanefreight.htb @10.129.14.128
 - dig axfr internal.inlanefreight.htb @10.129.14.128
+- dnsenum --dnsserver 10.129.149.49 --enum -p 0 -s 0 -o subdomains.txt -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb   -> brute force de servidores dns
 
 ### Todos os servidores DNS funcionam com três tipos diferentes de arquivos de configuração:
 
