@@ -186,7 +186,23 @@ O servidor DNS Bind9 é muito frequentemente usado em distribuições baseadas e
 - cat /etc/bind/db.domain.com
 - cat /etc/bind/db.10.129.14
 ---
+## 📂 SMTP
 
+O Simple Mail Transfer Protocol (SMTP) é um protocolo para envio de e-mails em uma rede IP. Ele pode ser usado entre um cliente de e-mail e um servidor de e-mail de saída ou entre dois servidores SMTP. O SMTP funciona sem criptografia, sem medidas adicionais, e transmite todos os comandos, dados ou informações de autenticação em texto simples. Para evitar a leitura não autorizada de dados, o SMTP é usado em conjunto com a criptografia SSL/TLS. Sob certas circunstâncias, um servidor usa uma porta diferente da porta TCP padrão 25 para a conexão criptografada, por exemplo, porta TCP 465.
+
+Para interagir com o servidor SMTP, podemos usar o telnet ferramenta para inicializar uma conexão TCP com o servidor SMTP
+
+- telnet 10.129.14.128 25
+- O comando VRFY pode ser usado para enumerar usuários existentes no sistema. No entanto, isso nem sempre funciona. Dependendo de como o servidor SMTP está configurado, o servidor SMTP pode apresentar problemas code 252 e confirmar a existência de um usuário que não existe no sistema.
+- https://serversmtp.com/smtp-error/ -> Uma lista de todos os códigos de resposta SMTP
+- Da pra enviar o e-mail pelo proprio terminal via SMTP.
+- Os scripts Nmap padrão incluem smtp-commands, que usa o EHLO comando para listar todos os comandos possíveis que podem ser executados no servidor SMTP de destino. sudo nmap 10.129.14.128 -sC -sV -p25
+- sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
+
+
+
+
+---
 ## 🧰 Extras e Ferramentas Úteis
 
 Ferramenta para buscar segredos e chaves de API expostas:
