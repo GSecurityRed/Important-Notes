@@ -200,7 +200,7 @@ Para interagir com o servidor SMTP, podemos usar o telnet ferramenta para inicia
 - sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
 - O comando VRFY no SMTP serve para perguntar ao servidor se um determinado usuário/endereço de e-mail existe.
 - o comando STARTTLS serve para inicializar uma sessão criptografada (TLS/SSL)
-- smtp-user-enum -M RCPT -U /usr/share/seclists/Usernames/Names/malenames-usa-top1000.txt -t 10.129.124.140 
+- smtp-user-enum -M VRFY -U agoraVAI.txt -t 10.129.124.140 -v -w 15
 
 
 
