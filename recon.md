@@ -198,6 +198,9 @@ Para interagir com o servidor SMTP, podemos usar o telnet ferramenta para inicia
 - Da pra enviar o e-mail pelo proprio terminal via SMTP.
 - Os scripts Nmap padrão incluem smtp-commands, que usa o EHLO comando para listar todos os comandos possíveis que podem ser executados no servidor SMTP de destino. sudo nmap 10.129.14.128 -sC -sV -p25
 - sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
+- O comando VRFY no SMTP serve para perguntar ao servidor se um determinado usuário/endereço de e-mail existe.
+- o comando STARTTLS serve para inicializar uma sessão criptografada (TLS/SSL)
+- smtp-user-enum -M RCPT -U /usr/share/seclists/Usernames/Names/names.txt -t 10.129.124.140 -q
 
 
 
