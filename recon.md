@@ -201,7 +201,21 @@ Para interagir com o servidor SMTP, podemos usar o telnet ferramenta para inicia
 - O comando VRFY no SMTP serve para perguntar ao servidor se um determinado usuário/endereço de e-mail existe.
 - o comando STARTTLS serve para inicializar uma sessão criptografada (TLS/SSL)
 - smtp-user-enum -M VRFY -U agoraVAI.txt -t 10.129.124.140 -v -w 15
+---
 
+## 📂 POP3 / IMAP
+
+Ao contrário do Post Office Protocol (POP3), o IMAP permite o gerenciamento on-line de e-mails diretamente no servidor e suporta estruturas de pastas. O POP3, por outro lado, não possui a mesma funcionalidade do IMAP e fornece apenas listagem, recuperação e exclusão de e-mails como funções no servidor de e-mail.
+
+- Por padrão, portas 110 e 995 são usados para POP3 e portas 143 e 993 são usados para IMAP.  Os portos mais altos (993 e 995) use TLS/SSL para criptografar a comunicação entre o cliente e o servidor.
+- nmap 10.129.123.200 -sV -sC -p 110,993,995,143
+- No entanto, vejamos a lista de comandos e vejamos como podemos interagir e nos comunicar diretamente com IMAP e POP3 usando a linha de comando.: 
+
+<img width="1295" height="872" alt="image" src="https://github.com/user-attachments/assets/81626df3-236f-49c1-bbe1-4feb6486b9f3" />
+
+<img width="1312" height="708" alt="image" src="https://github.com/user-attachments/assets/4c6b3f60-cfe1-42f6-ac16-6d2bcbc01871" />
+Configurações perigosas
+<img width="1298" height="411" alt="image" src="https://github.com/user-attachments/assets/7cf5470c-146e-4563-833c-b5cfbe5c7157" />
 
 
 
