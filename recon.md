@@ -211,6 +211,9 @@ Ao contrário do Post Office Protocol (POP3), o IMAP permite o gerenciamento on-
 - nmap 10.129.123.200 -sV -sC -p 110,993,995,143
 - No entanto, vejamos a lista de comandos e vejamos como podemos interagir e nos comunicar diretamente com IMAP e POP3 usando a linha de comando.:
 - openssl s_client -connect 10.129.123.200:pop3s
+- A FETCH 1 BODY[TEXT]
+- A FETCH 1 BODY[HEADER]
+- A SELECT DEV.DEPARTMENT.INT
 
 <img width="1295" height="872" alt="image" src="https://github.com/user-attachments/assets/81626df3-236f-49c1-bbe1-4feb6486b9f3" />
 
