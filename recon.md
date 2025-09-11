@@ -267,19 +267,21 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 ### Recon MySQL
 
 - Normalmente, o servidor MySQL é executado na porta TCP 3306, e podemos escanear esta porta com Nmap para obter informações mais detalhadas.
+- Os bancos de dados mais importantes para o servidor MySQL são os system schema (sys) e information schema (information_schema). O esquema do sistema contém tabelas, informações e metadados necessários para o gerenciamento.
+
+```
 - nmap 10.129.14.128 -sV -sC -p3306 --script mysql*
 - Interação com o servidor MySQL: mysql -u root -pP4SSw0rd -h 10.129.14.128 (o -p realmente tem que ser junto da senha)
 - show databases;	Mostrar todas as bases de dados.
 - select version(); Versão
 - use <database>;	Selecione um dos bancos de dados existentes.
 - select version();
-- show tables;	Mostrar todas as tabelas disponíveis na base de dados seleccionada.
-- show columns from <table>;	Mostrar todas as colunas na tabela seleccionada.
-- select * from <table>;	Mostrar tudo na tabela desejada.
+- show tables; Mostrar todas as tabelas disponíveis na base de dados seleccionada.
+- show columns from <table>; Mostrar todas as colunas na tabela seleccionada.
+- select * from <table> Mostrar tudo na tabela desejada.
 - select * from <table> where <column> = "<string>";	Procurar por necessário string na tabela desejada.
-- Os bancos de dados mais importantes para o servidor MySQL são os system schema (sys) e information schema (information_schema). O esquema do sistema contém tabelas, informações e metadados necessários para o gerenciamento.
 - select host, unique_users from host_summary;
-
+````
 
 
 ---
