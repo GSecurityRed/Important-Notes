@@ -224,7 +224,35 @@ Configurações perigosas
 ---
 ## 📂 SNMP
 
-Simple Network Management Protocol (SNMP) foi criado para monitorar dispositivos de rede. Além disso, este protocolo também pode ser usado para lidar com tarefas de configuração e alterar configurações remotamente.
+O SNMP (Simple Network Management Protocol) é um protocolo padrão usado para monitoramento e gerenciamento de dispositivos de rede. Ele permite que administradores acompanhem o estado e o desempenho de equipamentos como roteadores, switches, servidores, impressoras, câmeras IP, entre outros.. Além disso, este protocolo também pode ser usado para lidar com tarefas de configuração e alterar configurações remotamente.
+
+- SNMPv1 e v2c: simples, mas com segurança fraca (senhas em texto claro).
+- SNMPv3: adiciona criptografia e autenticação, tornando o protocolo mais seguro para redes críticas.
+- MIB = catálogo organizado das informações.
+- OID = “código de barras” que identifica cada informação dentro da MIB.
+- Community strings: Funciona como uma senha simples que controla o acesso ao dispositivo via SNMP. Basicamente é o que a gente precisa pra se autenticar
+
+### Portas principais do SNMP
+
+- UDP 161 → usada pelo gerente SNMP (NMS) para consultar ou configurar o agente SNMP no dispositivo. </br>
+Exemplo: coletar informações de CPU, interfaces, etc.</br>
+
+- UDP 162 → usada pelos agentes SNMP para enviar Traps ou Notifications (alertas) para o gerente.</br>
+Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automática para o sistema de monitoramento.
+
+### Recon SNMP
+
+- Para fazer footprinting do SNMP, podemos usar ferramentas como snmpwalk, onesixtyone, e braa.
+- Snmpwalk é usado para consultar os OIDs com suas informações.
+- Onesixtyone pode ser usado para forçar as Community strings, pois elas podem ser nomeadas arbitrariamente pelo administrador. Como essas strings de comunidade podem ser vinculadas a qualquer fonte, identificar as strings de comunidade existentes pode levar algum tempo.
+- snmpwalk -v2c -c public 10.129.14.128
+- sudo apt install onesixtyone
+- onesixtyone -c /opt/useful/seclists/Discovery/SNMP/snmp.txt 10.129.14.128
+- Depois de conhecermos uma string comunitária, podemos usá-la braa para forçar brutamente os OIDs individuais e enumerar as informações por trás deles.
+- sudo apt install braa
+- braa <community string>@<IP>:.1.3.6.*   # Syntax
+- braa public@10.129.14.128:.1.3.6.*
+
 
 ---
 ## 🧰 Extras e Ferramentas Úteis
