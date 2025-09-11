@@ -124,7 +124,7 @@ SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretório
 
 ---
 
-## Cliente RPC
+### Cliente RPC
 
 O rpcclient nos oferece muitas solicitações diferentes com as quais podemos executar funções específicas no servidor SMB para obter informações. Uma lista completa de todas essas funções pode ser encontrada no página de manual do cliente rpc.
 
