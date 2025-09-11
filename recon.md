@@ -252,6 +252,34 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - sudo apt install braa
 - braa <community string>@<IP>:.1.3.6.*   # Syntax
 - braa public@10.129.14.128:.1.3.6.*
+---
+
+## 📂 MySQL
+
+- É um SGBD (Sistema Gerenciador de Banco de Dados) relacional
+- O banco de dados é controlado usando o Linguagem de banco de dados SQL
+- Um dos melhores exemplos de uso de banco de dados é o CMS WordPress. O WordPress armazena todas as postagens, nomes de usuário e senhas criadas em seu próprio banco de dados, que só pode ser acessado pelo host local.
+- Esses bancos de dados geralmente são armazenados em um único arquivo com a extensão file .sql, por exemplo, como wordpress.sql.
+- Modelo relacional → organiza dados em tabelas (linhas e colunas).
+- Dados confidenciais, como senhas, podem ser armazenados em texto simples pelo MySQL; no entanto, eles geralmente são criptografados previamente pelos scripts PHP usando métodos seguros, como Criptografia unidirecional.
+- O aplicativo web informa ao usuário se ocorrer algum erro durante o processamento, podendo nos fornecer informações pra um possivel SQL injection.
+
+### Recon MySQL
+
+- Normalmente, o servidor MySQL é executado na porta TCP 3306, e podemos escanear esta porta com Nmap para obter informações mais detalhadas.
+- nmap 10.129.14.128 -sV -sC -p3306 --script mysql*
+- Interação com o servidor MySQL: mysql -u root -p P4SSw0rd -h 10.129.14.128
+- show databases;	Mostrar todas as bases de dados.
+- select version(); Versão
+- use <database>;	Selecione um dos bancos de dados existentes.
+- select version();
+- show tables;	Mostrar todas as tabelas disponíveis na base de dados seleccionada.
+- show columns from <table>;	Mostrar todas as colunas na tabela seleccionada.
+- select * from <table>;	Mostrar tudo na tabela desejada.
+- select * from <table> where <column> = "<string>";	Procurar por necessário string na tabela desejada.
+- Os bancos de dados mais importantes para o servidor MySQL são os system schema (sys) e information schema (information_schema). O esquema do sistema contém tabelas, informações e metadados necessários para o gerenciamento.
+- select host, unique_users from host_summary;
+
 
 
 ---
