@@ -221,7 +221,10 @@ Ao contrário do Post Office Protocol (POP3), o IMAP permite o gerenciamento on-
 Configurações perigosas
 <img width="1298" height="411" alt="image" src="https://github.com/user-attachments/assets/7cf5470c-146e-4563-833c-b5cfbe5c7157" />
 
+---
+## 📂 SNMP
 
+Simple Network Management Protocol (SNMP) foi criado para monitorar dispositivos de rede. Além disso, este protocolo também pode ser usado para lidar com tarefas de configuração e alterar configurações remotamente.
 
 ---
 ## 🧰 Extras e Ferramentas Úteis
