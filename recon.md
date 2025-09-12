@@ -282,9 +282,24 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - select * from <table> where <column> = "<string>";	Procurar por necessário string na tabela desejada.
 - select host, unique_users from host_summary;
 ````
+---
+
+## 📂 MSSQL
+
+- Microsoft SQL (MSSQL) é o sistema de gerenciamento de banco de dados relacional baseado em SQL da Microsoft. Ao contrário do MySQL, que discutimos na última seção, o MSSQL é de código fechado e foi inicialmente escrito para ser executado em sistemas operacionais Windows.
+- SQL Server Management Studio (SSMS) vem como um recurso que pode ser instalado com o pacote de instalação do MSSQL ou pode ser baixado e instalado separadamente.
+- Ele não existe apenas no servidor que hospeda o banco de dados. Isso significa que podemos nos deparar com um sistema vulnerável com SSMS com credenciais salvas que nos permitem nos conectar ao banco de dados. A imagem abaixo mostra o SSMS em ação.
+  
+<img width="1269" height="920" alt="image" src="https://github.com/user-attachments/assets/335ec8ed-e72e-4aa7-a6d0-3cdfe5c02e8a" />
+
+- Muitos outros clientes podem ser usados para acessar um banco de dados em execução no MSSQL: / mssql-cli /	SQL Server PowerShell	/ HeidiSQL / SQLPro /	Mssqlclient.py do Impacket
+- Dos clientes MSSQL listados acima, os pentesters podem achar o mssqlclient.py do Impacket o mais útil devido ao projeto Impacket da SecureAuthCorp estar presente em muitas distribuições de pentesting na instalação. Para descobrir se e onde o cliente está localizado em nosso host, podemos usar o seguinte comando: locate mssqlclient.
+
+
 
 
 ---
+
 ## 🧰 Extras e Ferramentas Úteis
 
 Ferramenta para buscar segredos e chaves de API expostas:
