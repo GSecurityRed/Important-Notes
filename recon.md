@@ -319,10 +319,10 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - SELECT @@VERSION; → versão
 - enum_users → lista usuários do SQL Server.
 - enum_logins → lista logins de instância.
-
-
-
 ---
+
+## Oracle TNS
+
 
 ## 🧰 Extras e Ferramentas Úteis
 
