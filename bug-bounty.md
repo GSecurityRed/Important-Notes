@@ -14,3 +14,4 @@ nmap 10.129.4.84 -sV -D RND:2 -Pn -sU -sS -g53 --max-retries 2 --script-args htt
 nuclei -t cves/ -u http://alvo.com -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 
 extensão dotgit, wappalyzer, shodan, DNSlytics
+
