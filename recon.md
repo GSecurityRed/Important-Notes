@@ -313,6 +313,12 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
   <img width="1294" height="631" alt="image" src="https://github.com/user-attachments/assets/3e81747e-2d24-4e1e-a82c-033bfd7b07c7" />
 
 - Conectando-se com Mssqlclient.py:  impacket-mssqlclient user@IP -windows-auth
+- Sem -windows-auth → você autentica com login e senha do SQL Server.
+- Com -windows-auth → você autentica com credenciais Windows/AD, podendo até abusar de hash/tickets em pentests.
+- enum_db → lista as db
+- SELECT @@VERSION; → versão
+- enum_users → lista usuários do SQL Server.
+- enum_logins → lista logins de instância.
 
 
 
