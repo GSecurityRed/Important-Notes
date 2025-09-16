@@ -312,7 +312,7 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - Também podemos usar o Metasploit para executar um scanner auxiliar chamado mssql_ping que escaneará o serviço MSSQL e fornecerá informações úteis em nosso processo de pegada. Imagem abaixo:
   <img width="1294" height="631" alt="image" src="https://github.com/user-attachments/assets/3e81747e-2d24-4e1e-a82c-033bfd7b07c7" />
 
-- Conectando-se com Mssqlclient.py:  impacket-mssqlclient "userSCL"@192.168.32.116
+- Conectando-se com Mssqlclient.py:  impacket-mssqlclient user@IP -windows-auth
 
 
 
