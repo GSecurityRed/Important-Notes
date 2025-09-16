@@ -295,6 +295,24 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - Muitos outros clientes podem ser usados para acessar um banco de dados em execução no MSSQL: / mssql-cli /	SQL Server PowerShell	/ HeidiSQL / SQLPro /	Mssqlclient.py do Impacket
 - Dos clientes MSSQL listados acima, os pentesters podem achar o mssqlclient.py do Impacket o mais útil devido ao projeto Impacket da SecureAuthCorp estar presente em muitas distribuições de pentesting na instalação. Para descobrir se e onde o cliente está localizado em nosso host, podemos usar o seguinte comando: locate mssqlclient.
 
+  <img width="1312" height="640" alt="image" src="https://github.com/user-attachments/assets/3cf25999-4756-4e0a-bc73-a611bb90b543" />
+
+
+### Configurações perigosas
+
+- Clientes MSSQL que não usam criptografia para se conectar ao servidor MSSQL
+- O uso de certificados autoassinados quando a criptografia está sendo usada. É possível falsificar certificados autoassinados
+- O uso de named pipes
+- Credenciais padrões ou fracas.
+
+### Recon MSSQL
+
+-  O NMAP possui scripts mssql padrão que podem ser usados para direcionar a porta tcp padrão 1433 que o MSSQL escuta.
+- nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
+- Também podemos usar o Metasploit para executar um scanner auxiliar chamado mssql_ping que escaneará o serviço MSSQL e fornecerá informações úteis em nosso processo de pegada. Imagem abaixo:
+  <img width="1294" height="631" alt="image" src="https://github.com/user-attachments/assets/3e81747e-2d24-4e1e-a82c-033bfd7b07c7" />
+
+- Conectando-se com Mssqlclient.py:  impacket-mssqlclient "userSCL"@192.168.32.116
 
 
 
