@@ -326,6 +326,9 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunicação que facilita a comunicação entre bancos de dados Oracle e aplicativos através de redes.
 
 - Por padrão, o ouvinte escuta as conexões de entrada na porta TCP/1521
+- Os arquivos de configuração do Oracle TNS são chamados tnsnames.ora e listener.ora e normalmente estão localizados no $ORACLE_HOME/network/admin diretório.
+- O Oracle 9 tem uma senha padrão, CHANGE_ON_INSTALL
+- odat.py para enumerar
 
 ## 🧰 Extras e Ferramentas Úteis
 
