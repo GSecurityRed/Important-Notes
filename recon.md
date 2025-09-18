@@ -323,6 +323,9 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 
 ## Oracle TNS
 
+O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunicação que facilita a comunicação entre bancos de dados Oracle e aplicativos através de redes.
+
+- Por padrão, o ouvinte escuta as conexões de entrada na porta TCP/1521
 
 ## 🧰 Extras e Ferramentas Úteis
 
