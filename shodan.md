@@ -6,3 +6,4 @@
 - ffplay -rtsp_transport tcp -i rtsp://admin:admin@SEU_IP:554/Streaming/Channels/101
 
 
+- testar udp e tcp, dependendo uma das duas vai
