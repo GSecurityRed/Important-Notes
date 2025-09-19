@@ -15,3 +15,4 @@ nuclei -t cves/ -u http://alvo.com -H "User-Agent: Mozilla/5.0 (Windows NT 10.0;
 
 extensão dotgit, wappalyzer, shodan, DNSlytics
 
+nuclei -u https://cursos.rizomasur.org -tags moodle
