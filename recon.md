@@ -72,6 +72,7 @@ dirb http://test.php.vulnweb.com
 Footprinting e fingerprinting de tecnologias, serviços e estrutura:
 
 ```bash
+nmap -p 80,443 --script http-headers,http-title,http-enum cursos.rizomasur.org
 gobuster dir -u http://target.com -w wordlist.txt
 gobuster dns -d target.com -w wordlist.txt
 subfinder -d target.com
