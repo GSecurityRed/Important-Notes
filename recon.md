@@ -374,6 +374,7 @@ O IPMI se comunica pela porta 623 UDP e os sistemas que usam o protocolo IPMI s�
 - senha padrões como root:calvin / Administrator:randomized 8-character string consisting of numbers and uppercase letters / ADMIN:ADMIN podem ser encontradas as vezes.
 - caso senhas padrões não funcionem, ainda se da para usar a uma falha no protocolo RAKP no IPMI 2.0
 - use auxiliary/scanner/ipmi/ipmi_dumphashes
+- hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
 - hashcat
 
 ## 🧰 Extras e Ferramentas Úteis
