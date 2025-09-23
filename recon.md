@@ -333,7 +333,7 @@ O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunica�
 - nmap -p1521 -sV 10.129.204.235 --open
 - nmap -p1521 -sV 10.129.204.235 --open --script oracle-sid-brute
 - sudo apt install odat
-- ./odat.py all -s 10.129.204.235
+- odat all -s 10.129.204.235
 - podemos usar a ferramenta sqlplus para se conectar ao banco de dados Oracle e interagir com ele.
 - sqlplus scott/tiger@10.129.204.235/XE
 - Se você se deparar com o seguinte erro sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory, por favor execute o abaixo,
