@@ -356,6 +356,24 @@ Windows	C:\inetpub\wwwroot </br>
 - echo "Oracle File Upload Test" > testing.txt
 - ./odat.py utlfile -s 10.129.204.235 -d XE -U scott -P tiger --sysdba --putFile C:\\inetpub\\wwwroot testing.txt ./testing.txt
 - curl -X GET http://10.129.204.235/testing.txt
+---
+
+## 📂 IPMI
+
+Interface de gerenciamento de plataforma inteligente (IPMI) é um conjunto de especificações padronizadas para sistemas de gerenciamento de host baseados em hardware usados para gerenciamento e monitoramento de sistemas. Ele atua como um subsistema autônomo e funciona independentemente do BIOS, CPU, firmware e sistema operacional subjacente do host. </br>
+O IPMI é normalmente usado de três maneiras:
+- Antes que o sistema operacional seja inicializado para modificar as configurações do BIOS
+- Quando o host estiver totalmente desligado
+- Acesso a um host após uma falha do sistema </br>
+
+O IPMI se comunica pela porta 623 UDP e os sistemas que usam o protocolo IPMI são chamados de Controladores de Gerenciamento de Baseboard (BMCs).
+
+- Se pudermos acessar um BMC durante uma avaliação, obteremos acesso total à placa-mãe host e poderemos monitorar, reiniciar, desligar ou até mesmo reinstalar o sistema operacional host.
+- nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local
+- use auxiliary/scanner/ipmi/ipmi_version 
+- senha padrões como root:calvin / Administrator:randomized 8-character string consisting of numbers and uppercase letters / ADMIN:ADMIN podem ser encontradas as vezes.
+- caso senhas padrões não funcionem, ainda se da para usar a uma falha no protocolo RAKP no IPMI 2.0
+- use auxiliary/scanner/ipmi/ipmi_dumphashes 
 
 ## 🧰 Extras e Ferramentas Úteis
 
