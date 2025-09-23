@@ -332,6 +332,7 @@ O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunica�
 - Ferramenta de ataque ao banco de dados Oracle (ODAT) é uma ferramenta de teste de penetração de código aberto escrita em Python e projetada para enumerar e explorar vulnerabilidades em bancos de dados Oracle. Ele pode ser usado para identificar e explorar várias falhas de segurança em bancos de dados Oracle, incluindo injeção de SQL, execução remota de código e escalonamento de privilégios.
 - nmap -p1521 -sV 10.129.204.235 --open
 - nmap -p1521 -sV 10.129.204.235 --open --script oracle-sid-brute
+- sudo apt install odat
 - ./odat.py all -s 10.129.204.235
 - podemos usar a ferramenta sqlplus para se conectar ao banco de dados Oracle e interagir com ele.
 - sqlplus scott/tiger@10.129.204.235/XE
