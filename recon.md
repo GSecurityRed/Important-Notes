@@ -339,6 +339,7 @@ O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunica�
 - Se você se deparar com o seguinte erro sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory, por favor execute o abaixo,
 - sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig
 - select table_name from all_tables;
+- SELECT username FROM all_users;
 - select * from user_role_privs;
 - sqlplus scott/tiger@10.129.204.235/XE as sysdba -> tentar escalar user normal logado para root
 
