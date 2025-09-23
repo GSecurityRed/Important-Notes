@@ -342,6 +342,8 @@ O Oracle Transparent Network Substrate (TNS) server é um protocolo de comunica�
 - SELECT username FROM all_users;
 - select * from user_role_privs;
 - sqlplus scott/tiger@10.129.204.235/XE as sysdba -> tentar escalar user normal logado para root
+- SELECT name, password FROM sys.user$;  -> ver todos os hashes de senha de usuario
+
 
 Podemos seguir muitas abordagens quando tivermos acesso a um banco de dados Oracle. Depende muito das informações que temos e de toda a configuração. No entanto, não podemos adicionar novos usuários nem fazer modificações. A partir deste ponto, poderíamos recuperar os hashes de senha do sys.user$ e tente quebrá-los offline. A consulta para isso seria semelhante à seguinte:
 
