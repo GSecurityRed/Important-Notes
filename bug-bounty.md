@@ -22,3 +22,6 @@ nuclei -u https://cursos.rizomasur.org -tags moodle
 `
 
 gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashboard/   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.itamaraty.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
+
+- nslookup -q=cname webhook || curl webhook  (passar em alguns headers)
+
