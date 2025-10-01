@@ -30,4 +30,5 @@ gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashb
 
 
 - https://github.com/santoru/shcheck -> ver se tem alguns headers vulneraveis
+- apt install zaproxy (uma boa tb pra scan web)
 
