@@ -133,6 +133,14 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
     :r:nslookup -q=cname hitvibmacavit642a1.bxss.me|curl hitvibmacav
     ```
 
+### Server local
+
+```bash
+python3 -m http.server 1234
+ngrok http 1234
+
+(pra se usar o ngrok precisa do http.server, porém só o http.server já server como server interno, o ngrok o deixa publico)
+```
 ## Ferramentas & Recursos Adicionais
 
 Links para repositórios e ferramentas úteis.
