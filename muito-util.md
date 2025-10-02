@@ -1,10 +1,6 @@
-# Anotações Importantes de Segurança
+# Umas paradas que uso de vez em quando e gosto de deixar salvo pra lembrar
 
-Um compilado de comandos, payloads e recursos úteis para estudos e testes de segurança.
-
-##  Reconhecimento & Enumeração
-
-Comandos e técnicas para coletar informações sobre um alvo.
+---
 
 ### Dorks & Descoberta
 * **Encontrar Programas de VDP (Vulnerability Disclosure Program):**
