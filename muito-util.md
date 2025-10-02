@@ -138,4 +138,5 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
 Links para repositórios e ferramentas úteis.
 
 - [SHCheck - Shell/Header Vulnerability Checker](https://github.com/santoru/shcheck)
+- [Converter imagem em link pub](https://pngup.com/)
 
