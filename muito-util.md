@@ -126,8 +126,8 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)
   });
-">
-    ```
+    ">
+```
 
 ### Out-of-Band (OOB)
 
