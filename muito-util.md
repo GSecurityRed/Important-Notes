@@ -141,6 +141,5 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
 
 Links para repositórios e ferramentas úteis.
 
-* **SHCheck - Shell/Header Vulnerability Checker:**
-    * [Repositório no GitHub](https://github.com/santoru/shcheck)
-    * *Nota: Verificar se o alvo possui alguns headers vulneráveis.*
+- [SHCheck - Shell/Header Vulnerability Checker](https://github.com/santoru/shcheck)
+
