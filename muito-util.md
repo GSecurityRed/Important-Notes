@@ -129,7 +129,7 @@ Snippets de código para explorar vulnerabilidades como XSS, SSRF, etc.
     ">
 
 ```
-
+```
 ### Out-of-Band (OOB)
 
 * **Payload OOB para testar em Headers (Blind SSRF, etc):**
