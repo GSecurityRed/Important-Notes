@@ -24,7 +24,7 @@
 * **Descoberta de Diretórios com Gobuster:**
     ```bash
     # Força bruta de diretórios com headers customizados de Host e Cookie.
-    gobuster dir -u https://teste.com -w /usr/share/wordlists/dirb/common.txt  -t 50 -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc;' -k -x html,php,js,aspx,bat,txt,zip
+    gobuster dir -u https://teste.com -w /usr/share/wordlists/dirb/common.txt  -t 50 -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc;' -k -x html,php,js,aspx,bat,txt,zip -b 400 -exclude-lenght 100
     ```
 
 ### Extensões úteis para Browser
