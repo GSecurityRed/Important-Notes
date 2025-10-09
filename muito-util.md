@@ -32,6 +32,7 @@
 * `Wappalyzer`
 * `Shodan`
 * `DNSlytics`
+* `Retire-js`
 
 
 ## Análise de Vulnerabilidades
