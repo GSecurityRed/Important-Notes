@@ -20,6 +20,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🌐 [Curl](./curl.md/)
 - 🐞 [Muito Util](./muito-util.md)
 - 👣 [Shodan](./shodan.md)
+- 🦾 [AccountTakeover](./AccountTakeover.md)
 
 ---
 
