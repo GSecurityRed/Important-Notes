@@ -20,8 +20,9 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🌐 [Curl](./curl.md/)
 - 🐞 [Muito Util](./muito-util.md)
 - 👣 [Shodan](./shodan.md)
-- 🦾 [SubdomainTakeover](./SubdomainTakeover.md)
--  🐞[PoisoningAtacks](./poisoningAtacks.md)
+- 🦾 [Subdomain Takeover](./SubdomainTakeover.md)
+- 🐞 [Poisoning Atacks](./poisoningAtacks.md)
+- 🦾 [Bypass de antivírus e EDR](./BypassAVeEDR.md)
 
 ---
 
