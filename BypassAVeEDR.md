@@ -1,5 +1,6 @@
-a
-
+<img width="1075" height="260" alt="image" src="https://github.com/user-attachments/assets/e5c940a9-57f3-4606-a451-50d51b65a057" /> <br>
+- ferramenta ScareCrow -> https://github.com/Tylous/ScareCrow
+- instalação em golang (lembrar de baixar dependencias também)
 
 
 
