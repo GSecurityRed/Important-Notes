@@ -7,25 +7,14 @@
 
 
 
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 🛡️ Disclaimer 
 
 This repository was created **for educational and cybersecurity research purposes only**.  
