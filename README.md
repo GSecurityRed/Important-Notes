@@ -21,7 +21,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🐞 [Muito Util](./muito-util.md)
 - 👣 [Shodan](./shodan.md)
 - 🦾 [Subdomain Takeover](./SubdomainTakeover.md)
-- 🐞 [Poisoning Atacks](./poisoningAtacks.md)
+- 🐞 [Poisoning Attacks](./poisoningAtacks.md)
 - 🦾 [Bypass de antivírus e EDR](./BypassAVeEDR.md)
 
 ---
