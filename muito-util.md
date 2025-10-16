@@ -149,7 +149,7 @@ ngrok http 1234
 (pra se usar o ngrok precisa do http.server, porém só o http.server já server como server interno, o ngrok o deixa publico)
 ```
 ## Ferramentas & Recursos Adicionais
-
+- ?_TSM_HiddenField_=jhbdvfkjhdfbvdfbv&_TSM_CombinedScripts_=1
 Links para repositórios e ferramentas úteis.
 
 - [SHCheck - Shell/Header Vulnerability Checker](https://github.com/santoru/shcheck)
