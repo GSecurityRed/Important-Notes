@@ -1,1 +1,1 @@
-aaa
+- adaptador wireles ou placa de rede que vem no notebook para testes
