@@ -73,6 +73,8 @@ curl "http://example.com/shell.php?cmd=whoami"
 ## Tecnicas de bypass de extensão shell </br>
 <img width="542" height="848" alt="image" src="https://github.com/user-attachments/assets/af956b20-0722-46e8-9d86-e8e386792023" />
 
+- GIF89a; na primeira linha tbm util para bypass
+
 ---
 
 ## Shell em PHP 
