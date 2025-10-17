@@ -23,6 +23,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🦾 [Subdomain Takeover](./SubdomainTakeover.md)
 - 🐞 [Poisoning Attacks](./poisoningAtacks.md)
 - 🦾 [Bypass de antivírus e EDR](./BypassAVeEDR.md)
+- 💉 [C2](./c2.md)
 
 ---
 
