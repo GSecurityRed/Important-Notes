@@ -25,6 +25,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🦾 [Bypass de antivírus e EDR](./BypassAVeEDR.md)
 - 💉 [C2](./c2.md)
 - 🛜 [Wifi Attacks](./wifiAttacks.md)
+- 💉 [SqlInjection](/.sql-injection.md)
 
 ---
 
