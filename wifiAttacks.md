@@ -46,4 +46,7 @@ esse comando foca em enviar dados adcionais a outros roteadores fazendo se passa
 - ls -l redeWPA-01* 
 - aircrack-ng -w [wordlist] [caminho-do-arquivo-dos-pacotes-]
 - key found! [senha encontrada]
-  
+
+---
+
+### Manipulando MacAddress para se conectar a uma rede wireless
