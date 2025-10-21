@@ -1,0 +1,3 @@
+- na parte dos cookies auth=admin
+- bypass pelo metodo http (post,get,put etc)
+- 
