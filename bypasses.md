@@ -1,3 +1,3 @@
 - na parte dos cookies auth=admin
 - bypass pelo metodo http (post,get,put etc)
-- 
+- bypass de waf pra ssrf usando o 169.254.169.254 (endereço interno de metadados de uma aplicação) usando conversão para Decimal 2852039166.
