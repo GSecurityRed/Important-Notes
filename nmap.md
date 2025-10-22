@@ -75,6 +75,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 - Combine opções para um scan poderoso:  
   `nmap -sS -sV -O -T4 -p- 192.168.0.1`
   - `nmap -p 80,443 --script http-headers,http-title,http-enum cursos.rizomasur.org` da uma de gobuster massa
+  - --all ports
 
 ---
   
