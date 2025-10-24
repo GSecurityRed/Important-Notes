@@ -10,4 +10,5 @@ Sequências como ../ (ponto-ponto-barra)
 ### Em ambientes PHP vulneráveis, podemos usar wrappers
 Como php://filter para ler o conteúdo de arquivos (geralmente codificado, para contornar a execução) ou php://input para injetar código.
 - php://filter/convert.base64-encode/resource=dog/../flag
+- ../../../../../../../var/log/apache2/access.log&ext   (com o "ext" podemos remover a extensão ".php" apenas definindo-a na consulta)
 - http://exemplo.com/pagina.php?arquivo=php://filter/read=convert.base64-encode/resource=/etc/passwd
