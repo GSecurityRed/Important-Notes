@@ -1,7 +1,7 @@
 # Umas paradas que uso de vez em quando e gosto de deixar salvo pra lembrar
 
 ---
-
+find / -name user.txt 2>/dev/null
 ### Dorks & Descoberta
 * **Encontrar Programas de VDP (Vulnerability Disclosure Program):**
     ```
