@@ -1,15 +1,5 @@
 # 🔎 Recon - Anotações de Enumeração e Coleta de Informações
 
-Este documento reúne comandos e técnicas úteis para **reconhecimento de aplicações web e infraestrutura**, com foco em:
-
-- Descoberta de subdomínios  
-- Coleta de endpoints  
-- Fuzzing de parâmetros  
-- Descoberta de diretórios  
-- Fingerprinting de tecnologias  
-- Ferramentas auxiliares
-
-Ideal para uso em CTFs, pentests ou estudos de segurança ofensiva.
 
 ---
 
