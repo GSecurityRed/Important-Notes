@@ -103,6 +103,7 @@ SMB é um protocolo cliente-servidor que regula o acesso a arquivos e diretório
 - Quando os comandos SMB são transmitidos pelo Samba para um serviço NetBIOS mais antigo, as conexões normalmente ocorrem por portas TCP 137, 138, e 139. Em contraste, o CIFS opera pela porta TCP 445 exclusivamente.
 
 - `smbclient //IP/ -U "user"` -> logar com um user especifico
+- smbclient //10.129.202.41/devshare/ -U 'alex%lol123!mD'
 - `smbclient //IP/dir` -> Acessar um pasta em especifico
 - `cat /etc/samba/smb.conf | grep -v "#\|\;"` -> Ler arquivo de configuração SAMBA
 - `sudo systemctl restart smbd` -> Reiniciar SAMBA apos modificar arquivo de configuração
