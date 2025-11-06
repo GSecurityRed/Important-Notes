@@ -159,3 +159,4 @@ Links para repositórios e ferramentas úteis.
 
 - id_rsa é o que precisa no ssh, ele tem que esta no dir .ssh, com permissao 600 e com um espaçamento depois do fim da chave pra n dar erro de libcrypto. Precisa tambem usar por final o comando ssh-keygen -lf id_rsa. Depois apenas logar no ssh usando o : ssh -i id_rsa ceil@10.129.196.75
 
+- reminna pra rdp no kali e outras coisas
