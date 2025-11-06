@@ -138,7 +138,7 @@ Ao rastrear o NFS, as portas TCP 111 e 2049 são essenciais
 - nmap --script nfs* 10.129.14.128 -sV -p111,2049 -> O rpcinfo do script NSE recupera uma lista de todos os serviços RPC em execução no momento, seus nomes e descrições e as portas que eles usam.
 - ls -l mnt/nfs/ -> Listar conteúdo com nomes de usuário e nomes de grupos
 - ls -n mnt/nfs/ -> Listar conteúdo com UIDs e GUIDs 
-- showmount -e 10.129.202.5 -> Mostrar ações NFS disponíveis </br>
+- showmount -e 10.129.202.5 -> Mostrar diretorios compartilhados disponiveis com everyone </br>
 ### Montagem compartilhamento NFS </br>
  - mkdir target-NFS </br>
  - sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock </br>
