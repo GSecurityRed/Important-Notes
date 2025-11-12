@@ -26,6 +26,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 💉 [C2](./c2.md)
 - 🛜 [Wifi Attacks](./wifiAttacks.md)
 - 💉 [SqlInjection](./sql-injection.md)
+- 📎 [API](./api.md)
 
 ---
 
