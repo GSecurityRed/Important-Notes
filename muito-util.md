@@ -25,6 +25,8 @@
 - http://palined.com/search/  bom dork para pesquisar diretorios publicos de sites
 - id_rsa é o que precisa no ssh, ele tem que esta no dir .ssh, com permissao 600 e com um espaçamento depois do fim da chave pra n dar erro de libcrypto. Precisa tambem usar por final o comando ssh-keygen -lf id_rsa. Depois apenas logar no ssh usando o : ssh -i id_rsa ceil@10.129.196.75
 - reminna pra rdp no kali e outras coisas
+- trufflehog git https://github.com/trufflesecurity/test_keys --results=verified            -> scan de um repositorio especifico em busca de secrets
+- trufflehog github --org=trufflesecurity --results=verified       -> scan de um perfil github completo em busca de secrets
 
 ---
   
