@@ -35,3 +35,14 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 - gobuster dir -u targetaddress/ -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
 
 *Kiterunner* é uma excelente ferramenta que foi desenvolvida e lançada pela Assetnote. O Kiterunner é atualmente a melhor ferramenta disponível para descobrir endpoints e recursos de API. Embora ferramentas de força bruta de diretório como Gobuster/Dirbuster/ funcionem para descobrir caminhos de URL, elas normalmente dependem de solicitações HTTP GET padrão. O Kiterunner não apenas usará todos os métodos de solicitação HTTP comuns com APIs (GET, POST, PUT e DELETE), mas também imitará estruturas comuns de caminho de API.
+
+#### Passo a passo para baixar:
+
+- sudo mv dist/kr /usr/local/bin/
+- git clone https://github.com/assetnote/kiterunner
+- cd kiterunner
+- make build
+- sudo mv dist/kr /usr/local/bin/
+- kr -h
+
+
