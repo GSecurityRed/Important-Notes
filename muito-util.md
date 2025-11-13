@@ -27,6 +27,7 @@
 - reminna pra rdp no kali e outras coisas
 - trufflehog git https://github.com/trufflesecurity/test_keys --results=verified            -> scan de um repositorio especifico em busca de secrets
 - trufflehog github --org=trufflesecurity --results=verified       -> scan de um perfil github completo em busca de secrets
+- https://web.archive.org/
 
 ---
   
