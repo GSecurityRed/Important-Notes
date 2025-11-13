@@ -38,7 +38,7 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 
 #### Passo a passo para baixar:
 
-- sudo mv dist/kr /usr/local/bin/
+- sudo apt install golang
 - git clone https://github.com/assetnote/kiterunner
 - cd kiterunner
 - make build
