@@ -1,3 +1,5 @@
+lembrar apenas: sudo docker-compose -f docker-compose.yml --compatibility up -d
+
 API significa Application Programming Interface (Interface de Programação de Aplicações), um conjunto de regras, protocolos e ferramentas que permite que diferentes softwares se comuniquem e troquem dados de forma segura e eficiente. Ela funciona como um intermediário que facilita a integração entre sistemas, possibilitando que um aplicativo utilize as funcionalidades de outro sem precisar conhecer seus detalhes internos.
 
 atento aos esquemas óbvios de nomenclatura de URL:
@@ -28,3 +30,6 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 
 
 ### Recon API
+
+- nmap -sV --script=http-enum <target> -p 80,443,8000,8080
+- amass enum -active -d target-name.com | grep api
