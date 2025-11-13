@@ -1,6 +1,6 @@
 API significa Application Programming Interface (Interface de Programação de Aplicações), um conjunto de regras, protocolos e ferramentas que permite que diferentes softwares se comuniquem e troquem dados de forma segura e eficiente. Ela funciona como um intermediário que facilita a integração entre sistemas, possibilitando que um aplicativo utilize as funcionalidades de outro sem precisar conhecer seus detalhes internos.
 
-Fique atento aos esquemas óbvios de nomenclatura de URL:
+atento aos esquemas óbvios de nomenclatura de URL:
 
 - https://target-name.com/api/v1
 - https://api.target-name.com/v1 
@@ -25,3 +25,6 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 
 - trufflehog
 - https://web.archive.org/
+
+
+### Recon API
