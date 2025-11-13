@@ -33,3 +33,4 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 
 - nmap -sV --script=http-enum <target> -p 80,443,8000,8080
 - amass enum -active -d target-name.com | grep api
+- gobuster dir -u targetaddress/ -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
