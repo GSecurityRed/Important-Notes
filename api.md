@@ -16,8 +16,7 @@ Além disso, subdomínios também podem ser indicadores de APIs da web:
 
 - API.target-name.com
 - uat.target-name.com
-- desenvolvimento.target-name.com
-- desenvolvedor.target-name.com
+- dev.target-name.com
 - teste.target-name.com
 
 Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta HTTP. O uso de JSON ou XML pode ser um bom indicador de que você descobriu uma API. Cabeçalhos de solicitação e resposta HTTP contendo "Tipo de conteúdo: application/json, application/xml"
@@ -34,3 +33,5 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 - nmap -sV --script=http-enum <target> -p 80,443,8000,8080
 - amass enum -active -d target-name.com | grep api
 - gobuster dir -u targetaddress/ -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
+
+*Kiterunner* é uma excelente ferramenta que foi desenvolvida e lançada pela Assetnote. O Kiterunner é atualmente a melhor ferramenta disponível para descobrir endpoints e recursos de API. Embora ferramentas de força bruta de diretório como Gobuster/Dirbuster/ funcionem para descobrir caminhos de URL, elas normalmente dependem de solicitações HTTP GET padrão. O Kiterunner não apenas usará todos os métodos de solicitação HTTP comuns com APIs (GET, POST, PUT e DELETE), mas também imitará estruturas comuns de caminho de API.
