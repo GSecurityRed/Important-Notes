@@ -22,3 +22,6 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 
 - Além disso, fique atento às respostas HTTP que incluem instruções como:
 {"mensagem": "Token de autorização ausente"}
+
+- trufflehog
+- https://web.archive.org/
