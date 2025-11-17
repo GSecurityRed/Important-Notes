@@ -7,6 +7,7 @@
 * `Shodan`
 * `DNSlytics`
 * `Retire-js`
+* `Hack-Tools` -> MUITO BOA
 ---
 - find / -name user.txt 2>/dev/null
 - "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
