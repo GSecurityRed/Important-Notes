@@ -209,6 +209,9 @@ Ao contrário do Post Office Protocol (POP3), o IMAP permite o gerenciamento on-
 - A FETCH 1 BODY[TEXT]
 - A FETCH 1 BODY[HEADER]
 - A SELECT DEV.DEPARTMENT.INT
+- /usr/share/nmap/scripts/imap-brute.nse
+- /usr/share/nmap/scripts/imap-capabilities.nse
+- /usr/share/nmap/scripts/imap-ntlm-info.nse
 
 <img width="1295" height="872" alt="image" src="https://github.com/user-attachments/assets/81626df3-236f-49c1-bbe1-4feb6486b9f3" />
 
