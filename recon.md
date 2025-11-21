@@ -206,9 +206,12 @@ Ao contrário do Post Office Protocol (POP3), o IMAP permite o gerenciamento on-
 - nmap 10.129.123.200 -sV -sC -p 110,993,995,143
 - No entanto, vejamos a lista de comandos e vejamos como podemos interagir e nos comunicar diretamente com IMAP e POP3 usando a linha de comando.:
 - openssl s_client -connect 10.129.123.200:pop3s
-- A FETCH 1 BODY[TEXT]
-- A FETCH 1 BODY[HEADER]
-- A SELECT DEV.DEPARTMENT.INT
+- "A" OU ALGUMA OUTRA VOGAL É NECESSARIO PARA OS COMANDOS DENTRO DO IMAP
+- A LIST "" *  (lista tudo primeiro)
+- A SELECT DIR_ESPECIFICO (se tiver algum conteudo disponivel aparecera algo como EXISTS 1 OU MAIS)
+- DENTRO DO SELECT DO DIR ESPECIFICO DAR UM: A SEARCH ALL (irá pegar o ID daquele conteudo que tem no dir, e assim vc pode rodar o comando abaixo para vizualizar o conteudo)
+- A FETCH ID_ESPECIFICO BODY[TEXT]  
+- A FETCH ID_ESPECIFICO BODY[HEADER]
 - /usr/share/nmap/scripts/imap-brute.nse
 - /usr/share/nmap/scripts/imap-capabilities.nse
 - /usr/share/nmap/scripts/imap-ntlm-info.nse
