@@ -249,7 +249,7 @@ Exemplo: quando uma interface de rede cai, o agente dispara uma mensagem automá
 - Depois de conhecermos uma string comunitária, podemos usá-la braa para forçar brutamente os OIDs individuais e enumerar as informações por trás deles.
 - sudo apt install braa
 - braa <community string>@<IP>:.1.3.6.*   # Syntax
-- braa public@10.129.14.128:.1.3.6.*
+- braa public@10.129.14.128:.1.3.6.*   ou  braa "backup@10.129.55.151:.*"  (o nome antes do arroba varia dependendo de usuario e o resultado do onesixtyone)
 ---
 
 ## 📂 MySQL
