@@ -18,7 +18,8 @@
 - zaproxy testar mais
 - subfinder -all -d alvo.com -recursive | httpx | nuclei -nmhe -t ./nuclei-templates/http/cves/(CVE)/CVE-2025-0133.yaml
 - nuclei -t cves/ -u [http://alvo.com] -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-- nuclei -u [https://alvo.com]) -tags moodle  
+- nuclei -u [https://alvo.com]) -tags moodle
+- saber ip de fomra simples usando o ping ou o host
 - ?_TSM_HiddenField_=jhbdvfkjhdfbvdfbv&_TSM_CombinedScripts_=1
 - [SHCheck - Shell/Header Vulnerability Checker](https://github.com/santoru/shcheck)
 - [Converter imagem em link pub](https://pngup.com/)
