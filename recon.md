@@ -51,7 +51,7 @@ Comandos para fuzzing de diretórios e caminhos em aplicações web:
 
 ```bash
 gobuster dir -u http://test.php.vulnweb.com -w wordlist.txt
-
+gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain
 ffuf -u http://test.php.vulnweb.com/FUZZ -w wordlist.txt
 
 dirb http://test.php.vulnweb.com
