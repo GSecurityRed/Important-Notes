@@ -12,6 +12,7 @@
 - find / -name user.txt 2>/dev/null
 - "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
 - [Dorks Faisalahmed](https://dorks.faisalahmed.me/)
+- gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain
 - nmap -sU -p 53 --script=dns-nsid 10.129.2.48 (Verifica o servidor DNS (porta 53/UDP) por possíveis exposições de dados sensíveis.)
 - nmap 10.129.4.84 -sV -D RND:2 -Pn -sS -sU --max-retries=2 --script-args http.useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" -p-
 - gobuster dir -u https://teste.com -w /usr/share/wordlists/dirb/common.txt  -t 50 -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc;' -k -x html,php,js,aspx,bat,txt,zip -b 400 -exclude-lenght 100
