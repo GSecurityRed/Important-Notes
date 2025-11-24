@@ -180,7 +180,14 @@ O servidor DNS Bind9 é muito frequentemente usado em distribuições baseadas e
 - cat /etc/bind/named.conf.local
 - cat /etc/bind/db.domain.com
 - cat /etc/bind/db.10.129.14
+
+### DNS TOOLS
+
+<img width="1008" height="905" alt="image" src="https://github.com/user-attachments/assets/49eb6f12-c9c7-4e9a-b46e-0bf91be5cf0a" />
+
 ---
+
+
 ## 📂 SMTP
 
 O Simple Mail Transfer Protocol (SMTP) é um protocolo para envio de e-mails em uma rede IP. Ele pode ser usado entre um cliente de e-mail e um servidor de e-mail de saída ou entre dois servidores SMTP. O SMTP funciona sem criptografia, sem medidas adicionais, e transmite todos os comandos, dados ou informações de autenticação em texto simples. Para evitar a leitura não autorizada de dados, o SMTP é usado em conjunto com a criptografia SSL/TLS. Sob certas circunstâncias, um servidor usa uma porta diferente da porta TCP padrão 25 para a conexão criptografada, por exemplo, porta TCP 465.
