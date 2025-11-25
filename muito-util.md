@@ -32,6 +32,7 @@
 - trufflehog github --org=trufflesecurity --results=verified       -> scan de um perfil github completo em busca de secrets
 - https://web.archive.org/
 - tool ReconSpider boa para crawling, pip3 install scrapy e depois wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip , unzip ReconSpider.zip , python3 ReconSpider.py http://inlanefreight.com
+- git clone https://github.com/thewhiteh4t/FinalRecon.git
 
 ---
   
