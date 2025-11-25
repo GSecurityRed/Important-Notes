@@ -77,6 +77,7 @@ gobuster dir   -u https:/teste   -w /usr/share/wordlists/dirb/common.txt   -t 50
 nuclei -u IP_DA_MAQUINA -as
 nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
 ReconSpider
+git clone https://github.com/thewhiteh4t/FinalRecon.git
 ```
 ## SSL certificate do site principal
 
