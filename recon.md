@@ -73,7 +73,7 @@ curl -IL http://target.com
 nmap -sV -p- target.com
 nmap --script vuln target.com
 dig any inlanefreight.com
-gobuster dir   -u https:/teste   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.itamaraty.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
+gobuster dir   -u https:/teste   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.ita.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
 nuclei -u IP_DA_MAQUINA -as
 nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
 ReconSpider
