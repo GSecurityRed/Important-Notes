@@ -66,6 +66,7 @@ nmap -p 80,443 --script http-headers,http-title,http-enum cursos.rizomasur.org
 gobuster vhost -u http://inlanefreight.htb:31025 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain -t 60 -k
 gobuster dir -u http://target.com -w wordlist.txt
 gobuster dns -d target.com -w wordlist.txt
+ffuf -u http://web1337.inlanefreight.htb:44677 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -mc 200,403 -t 60 -H "Host: FUZZ.web1337.inlanefreight.htb" -ac -s
 subfinder -d target.com
 whatweb http://target.com
 dirb http://target.com
