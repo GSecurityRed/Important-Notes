@@ -63,6 +63,7 @@ Footprinting e fingerprinting de tecnologias, serviços e estrutura:
 
 ```bash
 nmap -p 80,443 --script http-headers,http-title,http-enum cursos.rizomasur.org
+gobuster vhost -u http://inlanefreight.htb:31025 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain -t 60 -k
 gobuster dir -u http://target.com -w wordlist.txt
 gobuster dns -d target.com -w wordlist.txt
 subfinder -d target.com
