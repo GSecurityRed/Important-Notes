@@ -78,8 +78,8 @@ dig any inlanefreight.com
 gobuster dir   -u https:/teste   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.ita.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
 nuclei -u IP_DA_MAQUINA -as
 nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
-ReconSpider
-git clone https://github.com/thewhiteh4t/FinalRecon.git
+python3 ReconSpider.py http://dev.web1337.inlanefreight.htb:44677
+git clone https://github.com/thewhiteh4t/FinalRecon.git (--craw --url --full etc)
 ```
 ## SSL certificate do site principal
 
