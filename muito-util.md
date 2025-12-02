@@ -10,6 +10,7 @@
 * `Hack-Tools` -> MUITO BOA
 ---
 - find / -name user.txt 2>/dev/null
+- /auth.json
 - "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
 - [Dorks Faisalahmed](https://dorks.faisalahmed.me/)
 - gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain
