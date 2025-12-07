@@ -11,3 +11,8 @@
 - depois sudo apt install -y kali-linux-large
 - sudo apt install -y kali-win-kex
 - kex --win -s
+
+
+---
+DICA:
+- apt update --fix-missing AJUDA PROS ERROS
