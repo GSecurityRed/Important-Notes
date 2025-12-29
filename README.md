@@ -27,6 +27,7 @@ Repositório de **anotações técnicas**, criado com o objetivo de centralizar 
 - 🛜 [Wifi Attacks](./wifiAttacks.md)
 - 💉 [SqlInjection](./sql-injection.md)
 - 📎 [API](./api.md)
+-  [Nessus Free](./nessus.md)
 
 ---
 
