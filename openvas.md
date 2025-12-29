@@ -20,3 +20,7 @@ See "systemctl status ospd-openvas.service" and "journalctl -xeu ospd-openvas.se
 - 2- sudo chown _gvm:_gvm /var/log/gvm/openvas.log
 - 3- sudo gvm-stop
 - 4- sudo gvm-start
+
+## Trocar senha
+
+-sudo runuser -u _gvm -- gvmd --user=admin --new-password='pohadesenha'
