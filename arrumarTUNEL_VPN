@@ -1,0 +1,3 @@
+- ip route
+- systemctl restart NetworkManager
+- reboot
