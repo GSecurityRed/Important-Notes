@@ -46,4 +46,6 @@
 
 
 
+---
 
+⚠️ Aviso legal: Todos os comandos aqui têm propósito educacional e devem ser utilizados somente em ambientes controlados ou com permissão explícita.
