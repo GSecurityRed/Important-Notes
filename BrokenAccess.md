@@ -1,0 +1,1 @@
+- tentar passar o path secreto depois de uma tentativa de autenticação por exemplo https://exemplo.com/login/admin
