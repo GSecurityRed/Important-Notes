@@ -43,6 +43,16 @@
 ```
 <img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
 ```
+### Hostear arquivo sem a bomba do ngrok
+
+- wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+- sudo dpkg -i cloudflared-linux-amd64.deb
+- sudo apt -f install
+- cloudflared --version
+
+- abre o python3 -m http.server 3000 no dir que vc quer
+- depois só rodar cloudflared tunnel --url http://localhost:3000 e ele vai te fornecer o link
+
 
 
 
