@@ -42,6 +42,15 @@ Outro indicador de APIs da web são os cabeçalhos de solicitação e resposta H
 - git clone https://github.com/assetnote/kiterunner
 - cd kiterunner
 - make build
+
+# 🛡️ Disclaimer 
+
+This repository was created **for educational and cybersecurity research purposes only**.  
+The use of any information, scripts, or tools contained herein **is the sole responsibility of the user**.  
+**I am not responsible for any misuse** or activity that violates local laws or third-party policies.
+
+
+© [GSecurity]
 - sudo mv dist/kr /usr/local/bin/
 - kr -h
 
