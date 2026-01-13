@@ -31,7 +31,7 @@ Gust4vo@htb[/htb]$ cat id_rsa |base64 -w 0;echo
 
 MAQUINA ALVO USANDO BASE64
  -
-user@remotehost$ echo f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU | base64 -d > shell
+user@remotehost$ echo -n f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU | base64 -d > id_rsa
 
 ---
 
