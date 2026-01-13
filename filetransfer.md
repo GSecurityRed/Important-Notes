@@ -32,6 +32,11 @@ Gust4vo@htb[/htb]$ cat id_rsa |base64 -w 0;echo
 MAQUINA ALVO USANDO BASE64
  -
 user@remotehost$ echo -n f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU | base64 -d > id_rsa
+- Por fim, podemos confirmar se o arquivo foi transferido com sucesso usando o md5sum comando.
+ ```
+Gust4vo@htb[/htb]$ md5sum id_rsa
+4e301756a07ded0a2dd6953abf015278  id_rsa
+  ```
 
 ---
 
