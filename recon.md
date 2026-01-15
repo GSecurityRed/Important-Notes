@@ -75,7 +75,12 @@ curl -IL http://target.com
 nmap -sV -p- target.com
 nmap --script vuln target.com
 dig any inlanefreight.com
-gobuster dir   -u https:/teste   -w /usr/share/wordlists/dirb/common.txt   -t 50   -H 'Host: app.homolog.ita.local'   -H 'Cookie: ASP.NET_SessionId=whvgzv2plsyzvnglugu2kxyc; outro_cookie=valor'   -k -x html,php,js,aspx,bat,txt,zip
+
+gobuster dir -u https://apply.teste.org/ \
+  -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt \
+  -b 400 -t 50 -k -x html,php,js,aspx,bat,txt,zip \
+  --exclude-length 6659
+  
 nuclei -u IP_DA_MAQUINA -as
 nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
 python3 ReconSpider.py http://dev.web1337.inlanefreight.htb:44677
