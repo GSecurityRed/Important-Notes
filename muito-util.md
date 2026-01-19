@@ -11,6 +11,7 @@
 ---
 - find / -name user.txt 2>/dev/null
 - nuclei -tl | grep -i avada
+- nuclei -u https://site -tags wordpress
 - nuclei -tc "contains(to_lower(name), 'wordfence')" -u https://exemplo.com
 - /auth.json
 - wpscan --url https://exemplo.com --enumerate vp,vt,u,cb --api-token SEU_TOKEN --random-user-agent --force  --disable-tls-checks   --request-timeout 30
