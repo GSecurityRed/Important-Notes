@@ -75,6 +75,7 @@ curl -IL http://target.com
 nmap -sV -p- target.com
 nmap --script vuln target.com
 dig any inlanefreight.com
+wpscan --url https://exemplo.com --enumerate vp,vt,u,cb --api-token SEU_TOKEN --random-user-agent
 
 gobuster dir -u https://apply.teste.org/ \
   -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt \
