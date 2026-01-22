@@ -21,6 +21,7 @@
 - /auth.json
 - wpscan --url https://exemplo.com --enumerate vp,vt,u,cb --api-token SEU_TOKEN --random-user-agent --force  --disable-tls-checks   --request-timeout 30
 - "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
+- Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
 - [Dorks Faisalahmed](https://dorks.faisalahmed.me/)
 - gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain
 - nmap -sU -p 53 --script=dns-nsid 10.129.2.48 (Verifica o servidor DNS (porta 53/UDP) por possíveis exposições de dados sensíveis.)
