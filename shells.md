@@ -148,6 +148,11 @@ $diretorio -> close();
 ```
 ---
 
+# Extra
+
+- Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
+
+
 # 🛡️ Disclaimer 
 
 This repository was created **for educational and cybersecurity research purposes only**.  
