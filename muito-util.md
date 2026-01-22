@@ -13,6 +13,11 @@
 - nuclei -tl | grep -i avada
 - nuclei -u https://site -tags wordpress
 - nuclei -tc "contains(to_lower(name), 'wordfence')" -u https://exemplo.com
+- `nuclei -l targets.txt -t /path/to/templates \
+  -rl 5 -c 2 -bs 1 \
+  -timeout 5 -retries 0 \
+  -H "User-Agent: Mozilla/5.0" \
+  -stats -silent`
 - /auth.json
 - wpscan --url https://exemplo.com --enumerate vp,vt,u,cb --api-token SEU_TOKEN --random-user-agent --force  --disable-tls-checks   --request-timeout 30
 - "Vulnerability Disclosure Program" VDP "site:uk -bugbount -hackerone -intigriti -bugcrowd -yeswehack"
