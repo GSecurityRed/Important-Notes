@@ -13,7 +13,7 @@
 - nuclei -tl | grep -i avada
 - nuclei -u https://site -tags wordpress
 - nuclei -tc "contains(to_lower(name), 'wordfence')" -u https://exemplo.com
-- `nuclei -l targets.txt -t /path/to/templates \
+- `nuclei -u targets -t /path/to/templates \
   -rl 5 -c 2 -bs 1 \
   -timeout 5 -retries 0 \
   -H "User-Agent: Mozilla/5.0" \
