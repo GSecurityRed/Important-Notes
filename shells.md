@@ -171,11 +171,17 @@ No windows poderiamos utilizar a seguinte:
 3- Esta é outra situação em que precisamos ser criativos para obter essa carga útil entregue a um sistema de destino. Sem nenhum encodingou encryption, a carga útil nesta forma quase certamente seria detectada pelo Windows Defender AV. Se o AV foi desativado tudo o que o usuário precisaria fazer é clicar duas vezes no arquivo para executar e teríamos uma sessão de shell.
 
 ```
+---
+# Vulns famosas a respeito do tema
+### Windows
+<img width="996" height="852" alt="image" src="https://github.com/user-attachments/assets/fa65ad6a-31e7-405f-8425-bfd175c98bd1" />
 
 ---
 # Extra
 
 - Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
+- TTLs OS - https://subinsb.com/default-device-ttl-values/
+- sudo nmap -v 192.168.86.39 --script banner.nse
 
 
 # 🛡️ Disclaimer 
