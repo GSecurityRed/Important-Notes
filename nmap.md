@@ -7,6 +7,7 @@ Este repositório contém uma coleção de **comandos essenciais do Nmap** com e
 ## 📦 Escaneamento Básico
 
 - `nmap 192.168.0.1` → Escaneia as 1000 portas padrão de um host.
+- sudo nmap -v 192.168.86.39 --script banner.nse
 - `nmap -sP 192.168.0.0/24` → Descobre hosts ativos na rede (ping scan).
 - `nmap -p 22,80,443 192.168.0.1` → Escaneia portas específicas.
 
