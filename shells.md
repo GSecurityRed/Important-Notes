@@ -147,7 +147,15 @@ $diretorio -> close();
 ?>
 ```
 ---
+# Shells Staged & Stagedless + Buildando Stagedless via msfvenom
 
+
+
+- Staged: Pequeno stager inicial abre canal e baixa stage (Meterpreter) pela rede. Bom para espaço limitado, mas depende de conectividade.
+- Stageless: Payload completo em 1 arquivo. Maior, mas autônomo (sem download extra). Mais robusto em redes instáveis.
+- Stageless melhor opção também para hosts pessoais linux e windows, segue a abaixo comandos para sua fabricação e seu uso:
+
+---
 # Extra
 
 - Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
