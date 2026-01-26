@@ -182,6 +182,7 @@ No windows poderiamos utilizar a seguinte:
 - Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
 - TTLs OS - https://subinsb.com/default-device-ttl-values/
 - sudo nmap -v 192.168.86.39 --script banner.nse
+- https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master
 
 
 # 🛡️ Disclaimer 
