@@ -35,7 +35,7 @@ Um *bind shell* escuta conexões em uma porta específica da máquina alvo. Dife
 
 Use isso para obter uma shell mais interativa (ex: com tab-completion e atalhos funcionais):
 
-1. Use: `python -c 'import pty; pty.spawn("/bin/bash")'`
+1. Use: `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 2. Coloque a shell em segundo plano com `CTRL + Z`
 3. No seu terminal local, digite: `stty raw -echo`
 4. Volte para a shell com `fg` e pressione `Enter` duas vezes
