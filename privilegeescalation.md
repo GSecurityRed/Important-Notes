@@ -43,6 +43,7 @@ cat /proc/version
 uname -a
 lsb_release -a
 cat /etc/os-release
+find / -perm -u=s -type f 2>/dev/null
 
 # Variáveis de ambiente
 echo $PATH
