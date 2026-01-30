@@ -38,17 +38,32 @@ ssh root@<IP> -i id_rsa
 ### 🔎 Enumeração de Sistema e Ambiente Linux
 
 ```bash
-# Informações do kernel e sistema
+
+linpeas.sh
+linenum.sh
 cat /proc/version
 uname -a
 lsb_release -a
 cat /etc/os-release
 find / -perm -u=s -type f 2>/dev/null
-
-# Variáveis de ambiente
+ps aux | grep root
+history
+cat /etc/passwd
+cat /etc/shadow
+cat ~/.bash_history
+sudo -l (Listar privilégios do usuário)
+dpkg -l
+ls -la /etc/cron.daily/
+lsblk
 echo $PATH
 env
 set
+find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null   (Encontre diretórios graváveis)
+find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null   (Encontre arquivos graváveis)
+
+
+
+
 ```
 ### 🔎 Enumeração de Sistema e Ambiente Windows
 
@@ -61,6 +76,7 @@ ps
 getpid e depois migrate id_de_outro_processo_para_persisntecia
 bypass de UAC
 hashdump
+Get-Content (Get-PSReadlineOption).HistorySavePath
 ```
 ### Meterpreter / Metasploit
 
@@ -76,28 +92,6 @@ upload arquivo caminho
 use multi/recon/local_exploit_suggester
 ```
 
-
-### 🔐 Permissões Sudo
-Verifique permissões do usuário:
-
-```bash
-sudo -l
-```
-
-### 📦 Pacotes, Jobs e Reutilização
-Verificar pacotes instalados (Linux):
-
-```bash
-dpkg -l
-```
-
-### Checar histórico de comandos:
-
-```bash
-cat ~/.bash_history
-# Ou, no Windows:
-Get-Content (Get-PSReadlineOption).HistorySavePath
-```
 
 ## 🌐 Sites e Recursos Úteis
 
