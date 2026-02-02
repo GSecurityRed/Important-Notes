@@ -48,6 +48,7 @@ cat /etc/fstab
 grep "sh$" /etc/passwd
 uname -a
 route
+ls -l /tmp /var/tmp /dev/shm
 arp -a
 lsb_release -a
 ifconfig
