@@ -44,6 +44,8 @@ linenum.sh
 cat /proc/version
 cat /etc/fstab
 uname -a
+route
+arp -a
 lsb_release -a
 ifconfig
 ip a
@@ -97,6 +99,9 @@ download -r caminho
 upload arquivo caminho
 use multi/recon/local_exploit_suggester
 ```
+### Others 
+
+<img width="1015" height="437" alt="image" src="https://github.com/user-attachments/assets/48e87cbe-7be9-4707-804e-01b5d1258318" />
 
 
 ## 🌐 Sites e Recursos Úteis
