@@ -46,6 +46,7 @@ uname -a
 lsb_release -a
 ifconfig
 ip a
+cat /etc/shells
 cat /etc/os-release
 find / -perm -u=s -type f 2>/dev/null
 ps aux | grep root
