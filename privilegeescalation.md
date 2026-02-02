@@ -56,6 +56,7 @@ cat /etc/shadow
 cat ~/.bash_history
 sudo -l (Listar privilégios do usuário)
 sudo su
+lsblk
 dpkg -l
 ls -la /etc/cron.daily/
 lsblk
