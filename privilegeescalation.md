@@ -44,6 +44,8 @@ linenum.sh
 cat /proc/version
 uname -a
 lsb_release -a
+ifconfig
+ip a
 cat /etc/os-release
 find / -perm -u=s -type f 2>/dev/null
 ps aux | grep root
