@@ -42,6 +42,7 @@ ssh root@<IP> -i id_rsa
 linpeas.sh
 linenum.sh
 cat /proc/version
+cat /etc/fstab
 uname -a
 lsb_release -a
 ifconfig
