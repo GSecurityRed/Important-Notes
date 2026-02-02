@@ -39,10 +39,13 @@ ssh root@<IP> -i id_rsa
 
 ```bash
 
+find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student    (todos os arquivos ocultos)
+find / -type d -name ".*" -ls 2>/dev/null     (todos os diretorios ocultos)
 linpeas.sh
 linenum.sh
 cat /proc/version
 cat /etc/fstab
+grep "sh$" /etc/passwd
 uname -a
 route
 arp -a
