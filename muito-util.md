@@ -10,6 +10,7 @@
 * `Hack-Tools` -> MUITO BOA
 ---
 - find / -name user.txt 2>/dev/null
+- grep --color=auto -rnw ‘/’ -ie “HTB” --color=always 2> /dev/null
 - nuclei -tl | grep -i avada
 - nuclei -u https://site -tags wordpress
 - nuclei -tc "contains(to_lower(name), 'wordfence')" -u https://exemplo.com
