@@ -39,13 +39,17 @@ ssh root@<IP> -i id_rsa
 
 ```bash
 
+for i in $(curl -s https://gtfobins.github.io/ | html2text | cut -d" " -f1 | sed '/^[[:space:]]*$/d');do if grep -q "$i" installed_pkgs.list;then echo "Check GTFO for: $i";fi;done (comparar os binários existentes com os de GTFObins para ver quais binários devemos investigar mais tarde)
+find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null (encontrar arquivos de histórico especiais criados por scripts ou programas)
 find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student    (todos os arquivos ocultos)
 find / -type d -name ".*" -ls 2>/dev/null     (todos os diretorios ocultos)
 find / -name flag.txt 2>/dev/null
 grep --color=auto -rnw ‘/’ -ie “HTB” --color=always 2> /dev/null
+apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list    (é um pipeline pra gerar uma lista dos pacotes instalados no sistema, de um jeito mais “limpo”, e salvar isso num arquivo)
 linpeas.sh
 linenum.sh
 cat /proc/version
+sudo -V
 cat /etc/fstab
 grep "sh$" /etc/passwd
 uname -a
