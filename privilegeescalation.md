@@ -37,53 +37,119 @@ ssh root@<IP> -i id_rsa
 ```
 ### 🔎 Enumeração de Sistema e Ambiente Linux
 
-```bash
+```md
 
-for i in $(curl -s https://gtfobins.github.io/ | html2text | cut -d" " -f1 | sed '/^[[:space:]]*$/d');do if grep -q "$i" installed_pkgs.list;then echo "Check GTFO for: $i";fi;done (comparar os binários existentes com os de GTFObins para ver quais binários devemos investigar mais tarde)
-find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null (encontrar arquivos de histórico especiais criados por scripts ou programas)
-find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student    (todos os arquivos ocultos)
-find / -type d -name ".*" -ls 2>/dev/null     (todos os diretorios ocultos)
-find / -name flag.txt 2>/dev/null
-grep -Rni 'HTB{' / 2>/dev/null
-apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list    (é um pipeline pra gerar uma lista dos pacotes instalados no sistema, de um jeito mais “limpo”, e salvar isso num arquivo)
-find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null   (arquivo de configuração)
-find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"   (scripts)
-linpeas.sh
-linenum.sh
-cat /proc/version
-sudo -V
-cat /etc/fstab
-grep "sh$" /etc/passwd
+Enumeração de sistema e ambiente Linux — comandos úteis para reconhecimento inicial, CTFs e pentests.
+
+# Coleta informações do kernel e arquitetura do sistema
 uname -a
-route
-ls -l /tmp /var/tmp /dev/shm
-arp -a
-lsb_release -a
-ifconfig
-ip a
-cat /etc/shells
+
+# Mostra a versão do kernel e do compilador usado
+cat /proc/version
+
+# Identifica a distribuição Linux
 cat /etc/os-release
-find / -perm -u=s -type f 2>/dev/null
-ps aux | grep root
-history
+lsb_release -a
+
+# Lista usuários locais do sistema
 cat /etc/passwd
+
+# Exibe hashes de senha (se houver permissão)
 cat /etc/shadow
+
+# Identifica usuários que possuem shell válida
+grep "sh$" /etc/passwd
+
+# Lista shells disponíveis no sistema
+cat /etc/shells
+
+# Mostra histórico de comandos do usuário atual
+history
 cat ~/.bash_history
-sudo -l (Listar privilégios do usuário)
-sudo su
-lsblk
-dpkg -l
-ls -la /etc/cron.daily/
-lsblk
-echo $PATH
+
+# Exibe variáveis de ambiente
 env
 set
-find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null   (Encontre diretórios graváveis)
-find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null   (Encontre arquivos graváveis)
+echo $PATH
 
+# Verifica privilégios sudo do usuário atual
+sudo -l
 
+# Mostra a versão do sudo instalada
+sudo -V
 
+# Tenta escalar privilégios diretamente para root (se permitido)
+sudo su
 
+# Lista processos em execução pertencentes ao root
+ps aux | grep root
+
+# Mostra interfaces de rede e endereços IP
+ip a
+ifconfig
+
+# Exibe tabela de rotas
+route
+
+# Lista hosts descobertos via ARP
+arp -a
+
+# Lista pacotes instalados no sistema
+dpkg -l
+
+# Gera uma lista limpa dos pacotes instalados e salva em arquivo
+apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee installed_pkgs.list
+
+# Compara pacotes instalados com binários do GTFOBins
+for i in $(curl -s https://gtfobins.github.io/ | html2text | cut -d" " -f1 | sed '/^[[:space:]]*$/d'); do
+  if grep -q "$i" installed_pkgs.list; then
+    echo "Check GTFOBins for: $i"
+  fi
+done
+
+# Procura arquivos de configuração no sistema
+find / -type f \( -name "*.conf" -o -name "*.config" \) -exec ls -l {} \; 2>/dev/null
+
+# Procura scripts shell fora de diretórios comuns
+find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
+
+# Procura arquivos de histórico criados por scripts ou programas
+find / -type f \( -name "*_hist" -o -name "*_history" \) -exec ls -l {} \; 2>/dev/null
+
+# Lista todos os arquivos ocultos do sistema
+find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null
+
+# Lista todos os diretórios ocultos do sistema
+find / -type d -name ".*" -ls 2>/dev/null
+
+# Procura por flags comuns em CTFs
+find / -name flag.txt 2>/dev/null
+grep -Rni 'HTB{' / 2>/dev/null
+
+# Lista tarefas agendadas diárias
+ls -la /etc/cron.daily/
+
+# Mostra discos e partições montadas
+lsblk
+
+# Mostra sistemas de arquivos montados automaticamente
+cat /etc/fstab
+
+# Lista diretórios temporários e permissões
+ls -l /tmp /var/tmp /dev/shm
+
+# Procura diretórios graváveis por qualquer usuário
+find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
+
+# Procura arquivos graváveis por qualquer usuário
+find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
+
+# Procura binários com bit SUID ativo (possível privilege escalation)
+find / -perm -u=s -type f 2>/dev/null
+
+# Ferramentas automatizadas de enumeração
+linpeas.sh
+linenum.sh
 ```
 ### 🔎 Enumeração de Sistema e Ambiente Windows
 
