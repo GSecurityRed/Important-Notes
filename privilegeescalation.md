@@ -67,10 +67,18 @@ cat /etc/shells
 history
 cat ~/.bash_history
 
-# Exibe variáveis de ambiente
+# Exibe variáveis de ambiente + PATH abuse (Adicionando . ao PATH de um usuário adiciona seu diretório de trabalho atual à lista. Por exemplo, se pudermos modificar o caminho de um usuário, poderemos substituir um binário comum, como ls com um script malicioso, como um shell reverso.)
 env
 set
 echo $PATH
+htb_student@NIX02:~$ PATH=.:${PATH}
+htb_student@NIX02:~$ export PATH
+htb_student@NIX02:~$ echo $PATH
+htb_student@NIX02:~$ touch ls
+htb_student@NIX02:~$ echo 'echo "PATH ABUSE!!"' > ls
+htb_student@NIX02:~$ chmod +x ls
+htb_student@NIX02:~$ ls
+PATH ABUSE!!
 
 # Verifica privilégios sudo do usuário atual
 sudo -l
