@@ -109,6 +109,7 @@ done
 
 # Procura arquivos de configuração no sistema
 find / -type f \( -name "*.conf" -o -name "*.config" \) -exec ls -l {} \; 2>/dev/null
+find / ! -path "*/proc/*" -iname "*config*" -type f 2>/dev/null
 
 # Procura scripts shell fora de diretórios comuns
 find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
@@ -144,8 +145,23 @@ find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
 # Procura arquivos graváveis por qualquer usuário
 find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
 
+# Credenciais do banco de dados MySQL nos arquivos de configuração do WordPress
+grep 'DB_USER\|DB_PASSWORD' wp-config.php
+
+# É a principal maneira de acessar informações do processo e pode ser usada para visualizar e modificar as configurações do kernel
+find /proc -name cmdline -exec cat {} \; 2>/dev/null | tr " " "\n"
+
 # Procura binários com bit SUID ativo (possível privilege escalation)
 find / -perm -u=s -type f 2>/dev/null
+
+# Listar os programas compilados na forma de binário
+ls -l /bin /usr/bin/ /usr/sbin/
+
+# Lista último horário de login de cada usuário
+lastlog
+
+# Ver se mais alguém está atualmente logado no sistema conosco
+w
 
 # Ferramentas automatizadas de enumeração
 linpeas.sh
