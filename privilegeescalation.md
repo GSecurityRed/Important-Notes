@@ -44,7 +44,7 @@ find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/nu
 find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student    (todos os arquivos ocultos)
 find / -type d -name ".*" -ls 2>/dev/null     (todos os diretorios ocultos)
 find / -name flag.txt 2>/dev/null
-grep --color=auto -rnw ‘/’ -ie “HTB” --color=always 2> /dev/null
+grep -Rni 'HTB{' / 2>/dev/null
 apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list    (é um pipeline pra gerar uma lista dos pacotes instalados no sistema, de um jeito mais “limpo”, e salvar isso num arquivo)
 find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null   (arquivo de configuração)
 find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"   (scripts)
