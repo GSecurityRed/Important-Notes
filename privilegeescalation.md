@@ -53,6 +53,9 @@ uname -a
 # Mostra a versão do kernel e do compilador usado
 cat /proc/version
 
+# Uma lista de todos os executáveis binários no sistema, juntamente com as capacidades que foram definidas para cada um
+find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;
+
 # Identifica a distribuição Linux
 cat /etc/os-release
 lsb_release -a
