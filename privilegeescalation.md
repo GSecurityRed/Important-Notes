@@ -165,6 +165,18 @@ grep 'DB_USER\|DB_PASSWORD' wp-config.php
 # É a principal maneira de acessar informações do processo e pode ser usada para visualizar e modificar as configurações do kernel
 find /proc -name cmdline -exec cat {} \; 2>/dev/null | tr " " "\n"
 
+# Grupo LXD pode ser um bom vetor para escalar -> 10(lxd)
+uid=1009(devops) gid=1009(devops) groups=1009(devops),110(lxd)
+
+# Grupo DOCKER
+docker run -v /root:/mnt -it ubuntu  (Este comando cria uma nova instância do Docker com o diretório /root no sistema de arquivos host montado como um volume. Uma vez que o contêiner é iniciado, podemos navegar no diretório root)
+
+# Grupo DISK
+ Um invasor com esses privilégios pode usar debugfspara acessar todo o sistema de arquivos com privilégios de nível raiz.
+
+# Grupo ADM -> 4(adm)
+Os membros do grupo de membros podem ler todos os logs armazenados em /var/log. Isso não concede acesso root diretamente, mas pode ser aproveitado para coletar dados confidenciais armazenados em arquivos de log ou enumerar ações do usuário e executar tarefas cron.
+
 # Procura binários com bit SUID ativo (possível privilege escalation)
 find / -perm -u=s -type f 2>/dev/null
 
