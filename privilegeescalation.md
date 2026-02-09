@@ -171,6 +171,13 @@ lastlog
 # Ver se mais alguém está atualmente logado no sistema conosco
 w
 
+# Bypass de RBASH para leitura de arquivos
+1- while read line; do echo "$line"; done < flag.txt
+2- printf "%s\n" "$( < flag.txt )"
+3- mapfile -t a < flag.txt
+   printf "%s\n" "${a[@]}"
+
+
 # Ferramentas automatizadas de enumeração
 linpeas.sh
 linenum.sh
