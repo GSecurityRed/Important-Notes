@@ -41,6 +41,12 @@ ssh root@<IP> -i id_rsa
 
 Enumeração de sistema e ambiente Linux — comandos úteis para reconhecimento inicial, CTFs e pentests.
 
+# Esse comando procura todos os binários SUID root no sistema e lista seus detalhes.
+find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
+
+# Procura arquivos com SUID e SGID setados ao mesmo tempo.
+find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null
+
 # Coleta informações do kernel e arquitetura do sistema
 uname -a
 
