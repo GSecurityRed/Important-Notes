@@ -15,6 +15,12 @@ subfinder -d saltlabs.com -all -recursive -silent \
   | sort -u \
   | httpx -mc 200 -title -tech-detect -threads 100 -timeout 10
 
+  subfinder -d thinkglobalhealth.org -all -recursive -t 2 \
+| httpx -sc -lc -title -tech-detect \
+-rate-limit 2 \
+-threads 2 \
+-timeout 10
+
 dnsx -resp -a -cname -o resolved.txt
 ```
 
