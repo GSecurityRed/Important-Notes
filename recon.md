@@ -84,10 +84,17 @@ nmap --script vuln target.com
 dig any inlanefreight.com
 wpscan --url https://exemplo.com --enumerate vp,vt,u,cb --api-token SEU_TOKEN --random-user-agent --force  --disable-tls-checks   --request-timeout 30
 
-gobuster dir -u https://apply.teste.org/ \
-  -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt \
-  -b 400 -t 50 -k -x html,php,js,aspx,bat,txt,zip \
-  --exclude-length 6659
+gobuster dir \
+-u https://www.thinkglobalhealth.org/ \
+-w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt \
+-b 400 \
+-t 1 \
+-k \
+-x html,php,js,aspx,bat,txt,zip \
+--exclude-length 93239 \
+--delay 500ms \
+-a "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" \
+| tee -a diretorios
   
 nuclei -u IP_DA_MAQUINA -as
 nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
