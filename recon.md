@@ -12,6 +12,14 @@ https://web.archive.org/cdx/search/cdx?url=*.teste.com/*&output=txt&fl=original&
 
 cat domains.txt | nuclei -c 50 -rl 150 -bs 50 -es info -stats
 
+nuclei -l targets.txt -tags rce,sqli,xss,ssrf,lfi
+
+nuclei -l urls.txt -dast -automatic-scan
+
+nuclei -l targets.txt -tags grafana
+
+nuclei -l targets.txt -severity high,critical -c 40 -rl 100
+
 subfinder -d example.com -all -recursive| httpx -sc -lc -title -tech-detect -threads 100 -timeout 10
 
 subfinder -d saltlabs.com -all -recursive -silent \
