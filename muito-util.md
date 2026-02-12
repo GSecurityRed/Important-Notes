@@ -9,7 +9,7 @@
 * `Cookie-Editor`
 * `DNSlytics`
 * `Retire-js`
-* `Hack-Tools` -> MUITO BOA
+* `Hack-Tools`
 ---
 - find / -name user.txt 2>/dev/null
 - grep --color=auto -rnw ‘/’ -ie “HTB” --color=always 2> /dev/null
