@@ -11,6 +11,7 @@
 * `Retire-js`
 * `Hack-Tools`
 ---
+- cat domains.txt | nuclei -c 50 -rl 150 -bs 50 -es info -stats
 - find / -name user.txt 2>/dev/null
 - grep --color=auto -rnw ‘/’ -ie “HTB” --color=always 2> /dev/null
 - nuclei -tl | grep -i avada
