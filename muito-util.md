@@ -5,6 +5,8 @@
 * `dotgit`
 * `Wappalyzer`
 * `Shodan`
+* `FoxyProxy`
+* `Cookie-Editor`
 * `DNSlytics`
 * `Retire-js`
 * `Hack-Tools` -> MUITO BOA
