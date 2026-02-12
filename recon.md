@@ -8,6 +8,8 @@
 Comandos para descobrir subdomínios e coletar informações HTTP básicas:
 
 ```bash
+https://web.archive.org/cdx/search/cdx?url=*.teste.com/*&output=txt&fl=original&collapse=urlkey&page=/
+
 subfinder -d example.com -all -recursive| httpx -sc -lc -title -tech-detect -threads 100 -timeout 10
 
 subfinder -d saltlabs.com -all -recursive -silent \
