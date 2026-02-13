@@ -16,3 +16,12 @@
 ---
 DICA:
 - apt update --fix-missing AJUDA PROS ERROS
+
+---
+
+melhorar shell:
+
+- sudo apt update
+- sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting -y
+- chsh -s $(which zsh)
+- pronto, agora com autocomplete melhor, sem som chato e com cores nos comandos.
