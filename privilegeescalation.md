@@ -147,6 +147,8 @@ grep -Rni 'HTB{' / 2>/dev/null
 # Lista tarefas agendadas diárias
 ls -la /etc/cron.daily/
 
+Cada entrada no arquivo crontab requer seis itens na seguinte ordem: minutos, horas, dias, meses, semanas, comandos. Por exemplo, a entrada 0 */12 * * * /home/admin/backup.sh funcionaria a cada 12 horas.
+
 # Mostra discos e partições montadas
 lsblk
 
