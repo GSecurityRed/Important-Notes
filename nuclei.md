@@ -1,0 +1,1 @@
+- nuclei -u https://dotdev.shopify.com/password -tags config,exposure -header "User-Agent: bug bounty name ted64x"
