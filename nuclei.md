@@ -8,6 +8,14 @@
 - nuclei -u IP_DA_MAQUINA -t windows,smb,rdp,iis,exchange,ntlm
 - nuclei -u https://target.com -exclude-severity info
 
+```
+nuclei -u "https://login-accpt.portofantwerpbruges.com/poam/XUI/?service=test" \
+-dast \
+-dast-server \
+-tags xss \
+-fuzz \
+-headless
+````
 
 
 # Limit to 10 requests per second
