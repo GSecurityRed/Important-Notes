@@ -10,7 +10,10 @@ Comandos para descobrir subdomínios e coletar informações HTTP básicas:
 ```bash
 https://web.archive.org/cdx/search/cdx?url=*.teste.com/*&output=txt&fl=original&collapse=urlkey&page=/
 
-└─$ ffuf -u "https://notslack.innogames.de/api/v4/config/client?format=FUZZ" -w /usr/share/seclists/Discovery/Web-Content/common.txt -fs 4439
+curl -s "https://notslack.innogames.de/api/v4/config/client?format=old" | wc -c
+
+
+└─$ ffuf -u "https://notslack.innogames.de/api/v4/config/client?format=FUZZ" -w /usr/share/seclists/Discovery/Web-Content/common.txt -ms status lenght
 
 cat domains.txt | nuclei -c 50 -rl 150 -bs 50 -es info -stats
 
