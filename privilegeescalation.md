@@ -177,6 +177,11 @@ find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
 # Credenciais do banco de dados MySQL nos arquivos de configuração do WordPress
 grep 'DB_USER\|DB_PASSWORD' wp-config.php
 
+# Conferir Logrotate para possivel escalação de piv (https://github.com/whotwagner/logrotten.git)
+cat /etc/logrotate.conf
+cat /var/lib/logrotate.status
+grep "create\|compress" /etc/logrotate.conf | grep -v "#"
+
 # É a principal maneira de acessar informações do processo e pode ser usada para visualizar e modificar as configurações do kernel
 find /proc -name cmdline -exec cat {} \; 2>/dev/null | tr " " "\n"
 
