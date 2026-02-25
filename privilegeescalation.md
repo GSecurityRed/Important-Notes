@@ -50,6 +50,10 @@ find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null
 # Coleta informações do kernel e arquitetura do sistema
 uname -a
 
+# Se o alvo tiver tcpdump
+https://github.com/DanMcInerney/net-creds
+https://github.com/lgandx/PCredz
+
 # Mostra a versão do kernel e do compilador usado
 cat /proc/version
 
