@@ -81,7 +81,7 @@ lxc start privesc -> iniciar container
 lxc exec privesc /bin/bash ou lxc exec privesc -- /bin/sh -> entrar no container
 
 
-# Identifica a distribuição Linux
+# Identifica versão do sistema operacional
 cat /etc/os-release
 lsb_release -a
 
