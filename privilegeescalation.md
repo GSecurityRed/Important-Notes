@@ -56,6 +56,10 @@ find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null
 # Coleta informações do kernel e arquitetura do sistema
 uname -a
 
+# Conferir versão do SUDO
+sudo -V | head -n1
+Uma das vulnerabilidades mais recentes para sudo carrega o CVE-2021-3156 e é baseado em uma vulnerabilidade de buffer overflow baseada em heap.
+
 # Se o alvo tiver tcpdump
 https://github.com/DanMcInerney/net-creds
 https://github.com/lgandx/PCredz
