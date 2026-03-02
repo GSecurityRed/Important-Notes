@@ -256,6 +256,9 @@ cd CVE-2022-0847-DirtyPipe-Exploits
 bash compile.sh
 ./exploit-1 ou ./exploit-2
 
+# Tool chamada Lynis
+https://github.com/CISOfy/lynis
+tool de auditoria de vulns que pode se assemelhar com o linpeas.
 
 # Grupo DISK
  Um invasor com esses privilégios pode usar debugfspara acessar todo o sistema de arquivos com privilégios de nível raiz.
