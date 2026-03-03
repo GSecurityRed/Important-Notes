@@ -174,6 +174,7 @@ find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null
 find / -type d -name ".*" -ls 2>/dev/null
 
 # Procura por flags comuns em CTFs
+find / -iname "*flag*" 2>/dev/null (melhor)
 find / -name flag.txt 2>/dev/null
 find / -name "*.txt" 2>/dev/null | grep -iaR "flag"
 grep -Rni 'HTB{' / 2>/dev/null
