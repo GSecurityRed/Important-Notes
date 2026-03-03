@@ -175,6 +175,7 @@ find / -type d -name ".*" -ls 2>/dev/null
 
 # Procura por flags comuns em CTFs
 find / -name flag.txt 2>/dev/null
+find / -name "*.txt" 2>/dev/null | grep -iaR "flag"
 grep -Rni 'HTB{' / 2>/dev/null
 
 # CVE-2021-22555 (Versões vulneráveis do kernel: 2.6 - 5.11)
