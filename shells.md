@@ -6,6 +6,7 @@ Gerador de shell reversa bastante útil: [reverse-shell.sh](https://reverse-shel
 </br>
 Reverse Shell Generator
 https://www.revshells.com/
+Repositorio de webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum
 
 ---
 
