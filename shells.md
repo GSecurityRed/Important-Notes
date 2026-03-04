@@ -264,6 +264,7 @@ No windows poderiamos utilizar a seguinte:
 # Extra
 
 - Desativar AV `PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true`
+- Remover comentarios de shells e webshells importa muito para detecção de AVs
 - TTLs OS - https://subinsb.com/default-device-ttl-values/
 - sudo nmap -v 192.168.86.39 --script banner.nse
 - https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master
