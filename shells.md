@@ -2,11 +2,9 @@
 
 Este repositório traz um conjunto prático de comandos úteis para obtenção de shells remotas durante testes de penetração, exploração ou CTFs.
 
-Gerador de shell reversa bastante útil: [reverse-shell.sh](https://reverse-shell.sh/)
-</br>
-Reverse Shell Generator
-https://www.revshells.com/
-Repositorio de webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum
+- Gerador de shell reversa bastante útil: [reverse-shell.sh](https://reverse-shell.sh/)
+- Reverse Shell Generator: https://www.revshells.com/
+- Repositorio de webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum
 
 ---
 
