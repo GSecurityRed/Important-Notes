@@ -4,7 +4,7 @@ Este repositório traz um conjunto prático de comandos úteis para obtenção d
 
 - Gerador de shell reversa bastante útil: [reverse-shell.sh](https://reverse-shell.sh/)
 - Reverse Shell Generator: https://www.revshells.com/
-- Repositorio de webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum
+- Repositorio de webshells https://github.com/jbarcia/Web-Shells/tree/master/laudanum ou no dir do kali /usr/share/laudanum
 
 ---
 
