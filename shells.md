@@ -45,6 +45,8 @@ Podemos notar que nosso shell não cobre todo o terminal. Para corrigir isso, pr
 - Gust4vo@htb[/htb]$ echo $TERM xterm-256color
 - Gust4vo@htb[/htb]$ stty size 67 318
 
+- https://github.com/GSecurityRed/Important-Notes/blob/main/Spawning-Interactive-Shells.md
+
 
 
 ---
