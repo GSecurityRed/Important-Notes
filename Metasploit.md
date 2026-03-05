@@ -11,3 +11,9 @@ O Metasploit Projecté uma plataforma de teste de penetração modular baseada e
 
 Exemplo: 794 exploit/windows/ftp/scriptftp_list
 ```
+
+### Types
+
+<img width="966" height="621" alt="image" src="https://github.com/user-attachments/assets/24fe1415-fa69-44f5-b309-c036c60ecd4f" />
+
+
