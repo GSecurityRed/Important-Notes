@@ -7,6 +7,7 @@ O Metasploit Projecté uma plataforma de teste de penetração modular baseada e
 - options
 - use
 - info
+- setg
 
 ### Sintaxe dos modulos
 
