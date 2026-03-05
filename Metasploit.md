@@ -8,6 +8,7 @@ O Metasploit Projecté uma plataforma de teste de penetração modular baseada e
 - use
 - info
 - setg
+- run
 
 ### Sintaxe dos modulos
 
