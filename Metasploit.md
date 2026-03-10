@@ -4,6 +4,7 @@ O Metasploit Projecté uma plataforma de teste de penetração modular baseada e
 
 - msfconsole -q (não exibe o banner.)
 - search name
+- show targets
 - options
 - use
 - info
