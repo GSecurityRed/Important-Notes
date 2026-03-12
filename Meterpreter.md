@@ -4,6 +4,7 @@ O payload Meterpreter é um tipo específico de carga útil multifacetada e exte
 Ele pode nos ajudar a encontrar várias técnicas de escalonamento de privilégios, técnicas de evasão de AV, pesquisas adicionais sobre vulnerabilidades, fornecer acesso persistente, pivô, etc.
 
 https://www.rapid7.com/blog/post/2015/03/25/stageless-meterpreter-payloads/
+https://www.blackhillsinfosec.com/modifying-metasploit-x64-template-for-av-evasion/
 
 # Gerais
 
