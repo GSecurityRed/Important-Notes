@@ -29,3 +29,10 @@ https://www.blackhillsinfosec.com/modifying-metasploit-x64-template-for-av-evasi
 - run post/multi/recon/local_exploit_suggester (nos apresenta uma infinidade de opções, muito útil)
 - ps (listar processos, como no powershell)
 - steal_token ID (você assume a identidade de outro usuário que está rodando naquele processo.)
+
+# Como root
+
+- hashdump (extrair hashes)
+- lsa_dump_sam (extrair hashes)
+- lsa_dump_secrets (extrair secrets, pode até vim senha em texto claro)
+
