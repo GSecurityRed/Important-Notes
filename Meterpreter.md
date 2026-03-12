@@ -11,6 +11,8 @@ https://www.blackhillsinfosec.com/modifying-metasploit-x64-template-for-av-evasi
 - help
 - sysinfo
 - getuid
+- load (extensions)
+- run (scripts meterpreter)
 - pwd
 - ls
 - cd
