@@ -10,6 +10,9 @@ O Metasploit Project é uma plataforma de teste de penetração modular baseada 
 - info
 - setg
 - run
+- sessions
+- sessions -i 1
+- jobs
 
 ### Sintaxe dos modulos
 
