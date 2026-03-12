@@ -26,4 +26,6 @@ https://www.blackhillsinfosec.com/modifying-metasploit-x64-template-for-av-evasi
 - CTRL + L
 
 # Privsec
-- run post/multi/recon/local_exploit_suggester 
+- run post/multi/recon/local_exploit_suggester
+- ps (listar processos, como no powershell)
+- steal_token ID (você assume a identidade de outro usuário que está rodando naquele processo.)
