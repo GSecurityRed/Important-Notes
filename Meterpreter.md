@@ -35,4 +35,6 @@ https://www.blackhillsinfosec.com/modifying-metasploit-x64-template-for-av-evasi
 - hashdump (extrair hashes)
 - lsa_dump_sam (extrair hashes)
 - lsa_dump_secrets (extrair secrets, pode até vim senha em texto claro)
+- load kiwi (wrapper do Mimikatz para o Meterpreter)
+- 
 
